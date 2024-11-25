@@ -1,0 +1,73 @@
+.vendor-profile-nav-container {
+    width: 240px;
+    height: 800px;
+    padding: 72px 8px 32px 8px;
+    gap: 4px;
+    outline: 1px solid red;
+
+    .nav-container {
+        width:  224px;
+        height: 232px;
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .simple-nav {
+            width:  224px;
+            height:  128px;
+            gap: 4px;
+            opacity: 0px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+
+            .simple-nav-btn {
+                outline: none;
+                border: none;   
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                gap: 4px;
+                width: 100%;
+                height: 40px;
+                padding: 8px ;
+                border-radius: 6px ;
+                opacity: 0px;
+                font-family: Noto Sans;
+                font-size: 14px;
+                font-weight: 400;
+                text-align: left;
+                
+            }
+            
+
+        }
+        .account-action-nav {
+            width:  224px;
+            height:  128px;
+            gap: 4px;
+            opacity: 0px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            button {
+                outline: none;
+                border: none;   
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                gap: 4px;
+                width: 100%;
+                height: 40px;
+                padding: 8px ;
+                border-radius: 6px ;
+                opacity: 0px;
+                font-family: Noto Sans;
+                font-size: 14px;
+                font-weight: 400;
+                text-align: left;
+            }   
+        }
+    }
+}

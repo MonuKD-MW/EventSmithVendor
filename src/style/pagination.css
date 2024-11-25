@@ -1,0 +1,40 @@
+.pagination {
+        font-family: Noto Sans;
+        font-size: 16px;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        gap: 21px;
+        background-color: blue;
+      }
+      
+      .pagination-step {
+        cursor: pointer;
+        text-align: center;
+        /* width: 100%;   */
+        /* background-color: red; */
+      }
+      
+      
+      .pagination-step.completed {
+        color: rgba(255, 130, 20, 1);
+      }
+      
+      .pagination-step.current {
+        color: rgba(255, 130, 20, 1);
+        font-weight: 600;
+      }
+      
+      .pagination-step:hover {
+        color: rgba(44, 44, 46, 1);
+      }
+      
+      /* Horizontal Line Between Steps */
+      .pagination-line {
+        width: 20%; /* Adjust the length of the line */
+        height: 2px; /* Line thickness */
+        background-color: rgba(255, 130, 20, 1); /* Line color */
+        /* margin: 0 10px; Controls space around the line */
+        align-self: center; /* Ensures the line is vertically centered between steps */
+      }
