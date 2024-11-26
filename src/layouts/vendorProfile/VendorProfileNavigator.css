@@ -1,73 +1,111 @@
 .vendor-profile-nav-container {
     width: 240px;
     height: 800px;
-    padding: 72px 8px 32px 8px;
-    gap: 4px;
-    outline: 1px solid red;
-
-    .nav-container {
-        width:  224px;
-        height: 232px;
-        gap: 10px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-
-        .simple-nav {
-            width:  224px;
-            height:  128px;
-            gap: 4px;
-            opacity: 0px;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-
-            .simple-nav-btn {
-                outline: none;
-                border: none;   
-                display: flex;
-                align-items: center;
-                justify-content: start;
-                gap: 4px;
-                width: 100%;
-                height: 40px;
-                padding: 8px ;
-                border-radius: 6px ;
-                opacity: 0px;
-                font-family: Noto Sans;
-                font-size: 14px;
-                font-weight: 400;
-                text-align: left;
-                
-            }
-            
-
-        }
-        .account-action-nav {
-            width:  224px;
-            height:  128px;
-            gap: 4px;
-            opacity: 0px;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            button {
-                outline: none;
-                border: none;   
-                display: flex;
-                align-items: center;
-                justify-content: start;
-                gap: 4px;
-                width: 100%;
-                height: 40px;
-                padding: 8px ;
-                border-radius: 6px ;
-                opacity: 0px;
-                font-family: Noto Sans;
-                font-size: 14px;
-                font-weight: 400;
-                text-align: left;
-            }   
-        }
-    }
+    background-color: #fff;
+    padding: 72px 8px 32px;
+    position: relative;
+    z-index: 1000;
 }
+.show-nav-btn{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    right: auto;
+    z-index: 900;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 20px;
+}
+
+.nav-container {
+    width: 224px;
+    height: 232px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .close-nav-btn {
+        display: none;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        font-size: 20px;
+    }
+    
+}
+
+
+.simple-nav,
+.account-action-nav {
+    width: 224px;
+    height: 128px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+
+.simple-nav-btn,
+.account-action-nav button {
+    outline: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 40px;
+    padding: 8px;
+    border-radius: 6px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left;
+    gap: 4px;
+    color: #2C2C2E;
+    background-color: #fff;
+}
+
+.billing-payments-btn{
+    background: #FF821426;
+    color: #2C2C2E
+}
+.active-btn {
+    background-color: #FF8214;
+    color: #fff;
+}
+#sign-out-btn{
+    color: #C70000;
+    background-color: #fff;
+}
+#active-btn{
+    background-color: #FF8214;
+    color: #fff;
+}
+
+
+/* Large devices (desktops, 992px - 1199px) */
+@media   (max-width: 1199px) {
+    .vendor-profile-nav-container{
+      position: fixed;
+      top: 0;
+      left: -240px;
+      z-index: 1000;
+      height: 100vh;
+      transition: left 0.3s ease-in-out;
+      opacity: 0;
+      .nav-container{
+        .close-nav-btn{
+            display: block;
+        }
+      }
+    }
+
+    .show-vendor-profile-nav{
+        left: 0;
+        opacity: 1;
+    }
+  }

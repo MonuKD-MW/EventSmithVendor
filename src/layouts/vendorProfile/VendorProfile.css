@@ -1,0 +1,11 @@
+.vendor-profile{
+    background-color: #F5F5F5;
+    max-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    gap: 2rem;
+    overflow-x: hidden;
+    .vendor-side-panel{
+        font-family: 'Poppins', sans-serif ;
+    }
+}
