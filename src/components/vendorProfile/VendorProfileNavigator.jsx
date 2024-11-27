@@ -13,7 +13,7 @@ export default function VendorProfileNavigator({activeTab, setActiveTab}) {
     return (
         <>
             <button className="show-nav-btn" onClick={() => setShowNav(true)}><FaBars /></button>
-            <div className={`vendor-profile-nav-container ${showNav ? 'show-vendor-profile-nav' : ''}`}>
+            <div className={`vendor-profile-nav-container ${showNav ? 'show-vendor-profile-nav' : 'hide-vendor-profile-nav'}`}>
                 <div className="nav-container">
                 <button className="close-nav-btn" onClick={() => setShowNav(false)}><FaTimes /></button>
                 <div className="simple-nav">

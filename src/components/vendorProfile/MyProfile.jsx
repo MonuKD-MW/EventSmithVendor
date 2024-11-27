@@ -123,13 +123,13 @@ const MyProfile = () => {
                             <div className="data-label">Tax Number</div>
                             <div className="data-value">400001</div>
                         </div>
-                        <div className="upload-logo-con">
+                        {/* <div className="upload-logo-con">
                             <div className="dashed-con">
                                 <img src={photo} alt="" />
                                 <p className="upload-logo-label">Upload Logo</p>
                                 <p>For best results, use a high resolution, square image (1:1), 100 x 100 px.</p>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                     
                 </div>

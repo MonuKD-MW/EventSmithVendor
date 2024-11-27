@@ -3,8 +3,11 @@
     height: 800px;
     background-color: #fff;
     padding: 72px 8px 32px;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 1000;
+    box-shadow: 0 1px 8px rgba(3, 55, 211, 0.1);
 }
 .show-nav-btn{
     position: fixed;
@@ -12,10 +15,15 @@
     left: 10px;
     right: auto;
     z-index: 900;
-    background-color: transparent;
+    background-color: #fff;
     border: none;
-    outline: none;
+    /* outline: 1px solid red;  */
+    line-height: 0.9;
+    padding: 5px;
+    border-radius: 4px;
     font-size: 20px;
+    box-shadow: 0 1px 8px rgba(3, 55, 211, 0.1);
+
 }
 
 .nav-container {
@@ -95,7 +103,7 @@
       left: -240px;
       z-index: 1000;
       height: 100vh;
-      transition: left 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
       opacity: 0;
       .nav-container{
         .close-nav-btn{
@@ -107,5 +115,9 @@
     .show-vendor-profile-nav{
         left: 0;
         opacity: 1;
+    }
+    .hide-vendor-profile-nav{
+        left: -240px;
+        opacity: 0;
     }
   }
