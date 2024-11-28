@@ -16,6 +16,7 @@ const FileInput = ({ label, name, onChange }) => {
         onChange={onChange}
       />
       <span onClick={triggerFileSelect} className="file-input-icon">
+        {label}
         <RiPencilLine />
       </span>
     </div>

@@ -1,8 +1,9 @@
-import '../../style/socialMediaHandles.css'
+
 
 import { useDispatch } from "react-redux";
 import FileInput from "../common/FileInput";
 import TextInput from "../common/TextInput";
+import InputField from '../common/InputField';
 import SelectInput from "../common/SelectInput";
 import SocialMediaHandles from "./SocialMediaHandles"; // Import SocialMediaHandles Component
 import { socialMedia as socialMediaOptions } from "../../staticData.json"; // Import options
@@ -43,61 +44,76 @@ const PortfolioFormStep2 = ({
   };
 
   return (
-    <div className="portfolio-form-step-2">
-      <div className="portfolio-form-step-2-container1">
-        <FileInput
-          label="Business Logo"
-          name="businessLogoUrl"
-          onChange={(e) => handleLocalStateForStep(e)}
-        >
-          {imagePreview ? (
+    <div className="portfolio-form-step-1">
+      {/* Business Logo */}
+      <div className="portfolio-form-step-container">
+        
+          <div className="business-logo-container">
+          <FileInput
+            label="Business Logo"
+            name="businessLogoUrl"
+            onChange={(e) => handleLocalStateForStep(e)}
+          >
+            {imagePreview ? (
             <img src={imagePreview} alt="Business Logo Preview" />
-          ) : (
-            <div className="placeholder">Upload Logo</div>
-          )}
-        </FileInput>
-        <TextInput
-          label="Business Name*"
-          value={businessName || ""}
-          name="businessName"
-          onChange={(e) => handleLocalStateForStep(e)}
-        />
+            ) : (
+              <div className="placeholder">Upload Logo</div>
+            )}
+          </FileInput>
+          </div>
+        <div className="portfolio-form-step-container-right">
+          <TextInput
+            label="Business Name*"
+            value={businessName || ""}
+            name="businessName"
+            onChange={(e) => handleLocalStateForStep(e)}
+          />
+        </div>
       </div>
-
-      <div className="portfolio-form-step-2-container2">
-        <SelectInput
-          label="Service*"
-          name="service"
-          value={service || ""}
-          options={serviceOptions}
-          onChange={(e) => handleLocalStateForStep(e)}
-        />
-        <SelectInput
-          label="Sub-category*"
-          name="subCategory"
-          value={subCategory || ""}
-          options={getSubCategories(service)}
-          onChange={(e) => handleLocalStateForStep(e)}
-          multiple={multiple}
-        />
+      {/* Service and Sub-category */}
+      <div className="portfolio-form-step-container">
+      <div className="portfolio-form-step-container-left">
+          <SelectInput
+            label="Service*"
+            name="service"
+            value={service || ""}
+            options={serviceOptions}
+            onChange={(e) => handleLocalStateForStep(e)}
+          />
+        </div>
+        <div className="portfolio-form-step-container-right">
+          <SelectInput
+            label="Sub-category*"
+            name="subCategory"
+            value={subCategory || ""}
+            options={getSubCategories(service)}
+            onChange={(e) => handleLocalStateForStep(e)}
+            multiple={multiple}
+          />
+        </div>
       </div>
-
-      <div className="portfolio-form-step-2-container3">
-        <TextInput
+      {/* Address-1 and Address-2 */}
+      <div className="portfolio-form-step-container">
+        <div id="street-address" className="portfolio-form-step-container-left">
+        <InputField
           label="Street Address 1*"
           value={streetAddress1 || ""}
           name="streetAddress1"
           onChange={(e) => handleLocalStateForStep(e)}
         />
-        <TextInput
+        
+        <InputField
           label="Street Address 2"
           value={streetAddress2 || ""}
           name="streetAddress2"
           onChange={(e) => handleLocalStateForStep(e)}
         />
+        </div>
       </div>
 
-      <div className="portfolio-form-step-2-container4">
+      {/* Province and Postal Code */}
+      <div className="portfolio-form-step-container">
+        <div className="portfolio-form-step-container-left">
         <SelectInput
           label="Province*"
           name="province"
@@ -106,15 +122,19 @@ const PortfolioFormStep2 = ({
           onChange={(e) => handleLocalStateForStep(e)}
           disabled={!country}
         />
-        <TextInput
+        </div>
+        <div className="portfolio-form-step-container-right">
+        <InputField
           label="Postal Code*"
           value={postalCode || ""}
           name="postalCode"
           onChange={(e) => handleLocalStateForStep(e)}
-        />
+          />
+        </div>
       </div>
-
-      <div className="portfolio-form-step-2-container5">
+      {/* Country and Title */}
+      <div className="portfolio-form-step-container">
+        <div className="portfolio-form-step-container-left">
         <SelectInput
           label="Country*"
           name="country"
@@ -122,6 +142,8 @@ const PortfolioFormStep2 = ({
           options={countryCodes}
           onChange={(e) => handleLocalStateForStep(e)}
         />
+        </div>
+        <div className="portfolio-form-step-container-right">
         <SelectInput
           label="What is your role in the company*"
           name="title"
@@ -129,9 +151,10 @@ const PortfolioFormStep2 = ({
           options={["owner", "manager", "other"]}
           onChange={(e) => handleLocalStateForStep(e)}
         />
+        </div>
       </div>
 
-      <div className="portfolio-form-step-2-container6">
+      <div className="portfolio-form-step-container">
         <div className="portfolio-form-step-2-container6-left">
           <label htmlFor="BusinessDescription">Business Description*</label>
           <textarea
@@ -145,11 +168,11 @@ const PortfolioFormStep2 = ({
       </div>
 
       {/* Social Media Handles Section */}
-      <SocialMediaHandles
+        <SocialMediaHandles
         socialMedia={socialMedia} // Pass the existing socialMedia state
         handleLocalStateForStep={handleLocalStateForStep} // Pass state handler
         socialMediaOptions={socialMediaOptions} // Pass options
-      />
+        />
     </div>
   );
 };

@@ -1,8 +1,9 @@
-import '../../style/socialMediaHandles.css';
+
 import { GoTriangleDown,GoTriangleRight } from "react-icons/go";
 import React, { useState } from "react";
 import SelectInput from "../common/SelectInput";
 import TextInput from "../common/TextInput";
+import InputField from "../common/InputField";
 
 const SocialMediaHandles = ({ socialMedia, handleLocalStateForStep, socialMediaOptions }) => {
 // !toggle feature
@@ -40,11 +41,14 @@ const SocialMediaHandles = ({ socialMedia, handleLocalStateForStep, socialMediaO
 
   return (
     <div className="social-media-container">
-      <h3 onClick={toggleSocialMedia} className="social-media-header"><span>{showSocialMedia ? <GoTriangleDown /> : <GoTriangleRight />}</span> Social Media Handles</h3>
+      <div className="social-media-header-container get-form-responsive-width">
+        <h3 onClick={toggleSocialMedia} className="social-media-header"><span>{showSocialMedia ? <GoTriangleDown /> : <GoTriangleRight />}</span> Social Media Handles</h3>
+      </div>
       {showSocialMedia && (
         <>
           {socialMedia.map((item, index) => (
-            <div key={index} className="social-media-row">
+            <div id='social-media-container-width' key={index} className="portfolio-form-step-container">
+              <div  className="portfolio-form-step-container-left">
               <SelectInput
                 label="Social Media Handles*"
                 name={`socialMediaHandles-${index}`}
@@ -52,13 +56,15 @@ const SocialMediaHandles = ({ socialMedia, handleLocalStateForStep, socialMediaO
                 options={socialMediaOptions}
                 onChange={(e) => handleInputChange(index, "socialMediaHandle", e.target.value)}
               />
-              <TextInput
+              </div>
+              <div className="portfolio-form-step-container-right">
+              <InputField
                 label="Page Link*"
                 name={`pageLink-${index}`}
                 value={item.pageLink}
                 onChange={(e) => handleInputChange(index, "pageLink", e.target.value)}
               />
-             
+              </div>
               {/* 
               //! for now we don't need remove feature
               <button
@@ -70,13 +76,16 @@ const SocialMediaHandles = ({ socialMedia, handleLocalStateForStep, socialMediaO
               </button> */}
             </div>
           ))}
+          <div className="social-media-handle-button-container get-form-responsive-width">
           <button
             type="button"
-            className="add-handle-btn"
+            className="sadd-handle-btn"
             onClick={handleAddSocialHandle}
           >
+            <span>+</span>
             Add More Social Handle
           </button>
+          </div>
         </>
       )}
     </div>

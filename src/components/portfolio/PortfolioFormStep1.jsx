@@ -57,6 +57,8 @@ const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email,password,phone
         </div>
       </div>
 
+
+
       <div className="portfolio-form-step-1-container3">
         <div className="portfolio-form-step1-area-code portfolio-area-code">
           <label htmlFor="phoneAreaCode">Area Code*</label>
@@ -84,7 +86,7 @@ const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email,password,phone
             isDisabled={true}
 
           />
-          //think about phone verification later
+          {/* think about phone verification later */}
           {/* {vendorData.phoneVerified && (
             <span className="edit-phone-area-code">
               {vendorData.phoneVerified && <FaCheck className="edit-phone-area-code-icon" />}
@@ -103,8 +105,12 @@ const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email,password,phone
 
 
 
-        </div>
+      </div>
+
+
+
         <div className="portfolio-form-step1-country">
+        <label htmlFor="country">Country*</label>
           <select
             id="country"
             name="country"
