@@ -1,4 +1,4 @@
-import "./Portfolio.css";
+import '../../style/Portfolio.css';
 import { countryCodes, regions, ServiceData } from "../../staticData.json";
 import PortfolioFormStep1 from "./PortfolioFormStep1";
 import PortfolioFormStep2 from "./PortfolioFormStep2";

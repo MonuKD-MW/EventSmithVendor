@@ -4,7 +4,7 @@ import LoginPage from "../layouts/auth/login/LoginPage";
 import SignupPage from '../layouts/auth/signUp/SignupPage'
 import Portfolio from '../components/portfolio/PortFolio'
 import { useAuth } from '../context/AuthContext';
-import VendorProfile from "../components/vendorProfile/VendorProfile";
+import VendorProfile from "../layouts/vendorProfile/VendorProfile";
 function AppRoutes() {
   const { isLoggedIn } = useAuth();
 

@@ -1,4 +1,4 @@
-import "../../layouts/vendorProfile/VendorProfileNavigator.css";
+import '../../style/VendorProfileNavigator.css'
 import { SlHandbag } from "react-icons/sl";
 import { FaRegUserCircle } from "react-icons/fa";
 import { FaMoneyBill } from "react-icons/fa";

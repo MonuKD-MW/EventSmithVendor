@@ -1,4 +1,4 @@
-import '../../layouts/portfolio/socialMediaHandles.css'
+import '../../style/socialMediaHandles.css'
 
 import { useDispatch } from "react-redux";
 import FileInput from "../common/FileInput";

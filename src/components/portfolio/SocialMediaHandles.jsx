@@ -1,4 +1,4 @@
-import '../../layouts/portfolio/socialMediaHandles.css';
+import '../../style/socialMediaHandles.css';
 import { GoTriangleDown,GoTriangleRight } from "react-icons/go";
 import React, { useState } from "react";
 import SelectInput from "../common/SelectInput";

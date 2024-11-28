@@ -1,4 +1,4 @@
-import '../../layouts/vendorProfile/AccountSettings.css'
+import '../../style/AccountSettings.css'
 import { IoMdCheckmark } from "react-icons/io";
 import { TbCircleLetterX } from "react-icons/tb";
 const AccountSettings = () => {

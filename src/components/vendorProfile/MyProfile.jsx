@@ -1,4 +1,4 @@
-import '../../layouts/vendorProfile/MyProfile.css'
+import '../../style/MyProfile.css'
 import { CiCamera } from "react-icons/ci";
 import profileImg from '../../assets/user-img.jpg'
 import photo from '../../assets/photo.png'

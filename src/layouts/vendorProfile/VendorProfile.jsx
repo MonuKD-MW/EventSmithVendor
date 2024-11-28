@@ -1,10 +1,10 @@
-import VendorProfileNavigator from '../vendorProfile/VendorProfileNavigator'
-import '../../layouts/vendorProfile/VendorProfile.css'
+import VendorProfileNavigator from '../../components/vendorProfile/VendorProfileNavigator'
+import './VendorProfile.css'
 import { useState } from 'react'
-import MyProfile from './MyProfile'
-import MyBookings from './MyBookings'
-import BillingAndPayment from './BillingAndPayment'
-import AccountSettings from './AccountSettings'
+import MyProfile from '../../components/vendorProfile/MyProfile'
+import MyBookings from '../../components/vendorProfile/MyBookings'
+import BillingAndPayment from '../../components/vendorProfile/BillingAndPayment'
+import AccountSettings from '../../components/vendorProfile/AccountSettings'
 const VendorProfile = () => {
     const [activeTab, setActiveTab] = useState('my-profile')
     return (
