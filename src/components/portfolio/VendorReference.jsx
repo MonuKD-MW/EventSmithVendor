@@ -7,7 +7,7 @@ import { RiArrowDownSLine } from "react-icons/ri";
 
 export default function VendorReference({referenceData,index,handleChange}){
     const {referenceBusinessName,areaCode,phone,referenceWebsite,address,postalCode,relationship} = referenceData;
-    const [isOpen,setIsOpen] = useState(false);
+    const [isOpen,setIsOpen] = useState(true);
     const handleToggle = () => {
         setIsOpen(!isOpen);
     }
@@ -97,7 +97,7 @@ export default function VendorReference({referenceData,index,handleChange}){
                         />
                     </div>
                 </div>
-                <hr />
+                
             </div>
             )}
         </div>
