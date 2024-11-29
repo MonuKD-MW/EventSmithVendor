@@ -22,7 +22,7 @@ const vendorDataSlice = createSlice({
 		businessDescription: "", 
 		title: "Owner", // from contactInfo (title of Owner)
 		socialMedia: [{
-			socialMediaHandle: "Facebook",
+			socialMediaHandle: "",
 			pageLink: "Link goes here"
 		}], // Not provided in the response
 		references: [

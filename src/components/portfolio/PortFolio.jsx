@@ -78,7 +78,7 @@ function Portfolio() {
       {/* Portfolio footer */}
       <div className="button-container-portfolio">
         <button
-          className={`back-button-portfolio ${step !== 1 ? "active" : ""}`}
+          className={`back-button-portfolio ${step !== 1 ? "back-button-active" : ""}`}
           onClick={() => setStep(step - 1)}
           disabled={step === 1}
         >
@@ -92,7 +92,7 @@ function Portfolio() {
           disabled={step === 2 ? !vendorData.firstName || !vendorData.lastName : false} // Disable Next until form is valid (example validation)
         >
           {/* {step === 2 ? "Create Account" : `Next`} */}
-          {step === 2 ? "Next" : `Next`}
+          {step === 4 ? "Submit" : `Next`}
         </button>
       </div>  
 

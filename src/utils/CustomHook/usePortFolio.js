@@ -93,7 +93,9 @@ const usePortFolio = () => {
 			updateVendorDataWithLocalState();
 		}
 		if (true) {
-			setStep(step + 1);
+			if(step <= 4){
+				setStep(step + 1);
+			}
 		}
 	};
 

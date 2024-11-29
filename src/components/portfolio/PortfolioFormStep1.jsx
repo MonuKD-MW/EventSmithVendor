@@ -145,21 +145,14 @@ const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email,password,phone
               Select City
             </option>
             {localStateForStep?.country === 'Canada' ? (
-              <>
-                <optgroup label="Provinces">
-                  {regions.Canada.Provinces.map((province) => (
-                    <option key={province} value={province}>{province}</option>
-                  ))}
-                </optgroup>
-                <optgroup label="Territories">
-                  {regions.Canada.Territories.map((territory) => (
-                    <option key={territory} value={territory}>{territory}</option>
-                  ))}
-                </optgroup>
-              </>
-            ) : regions['United States'].Provinces.map((state)=>(
-              <option key={state} value={state}>{state}</option>
-            ))}
+                [...regions.Canada.Provinces, ...regions.Canada.Territories].map((region) => (
+                    <option key={region} value={region}>{region}</option>
+                ))
+            ) : (
+                regions['United States'].Provinces.map((state) => (
+                    <option key={state} value={state}>{state}</option>
+                ))
+            )}
           </select>
           <span>
             <RiArrowDownSLine />

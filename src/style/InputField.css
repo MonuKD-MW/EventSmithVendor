@@ -31,7 +31,10 @@
         z-index: 10;
         left: 20px;
         top:6px;
-        color: #333;
+        color: var(--text-color);
+        font-family: Noto Sans;
+        font-weight: 600;
+        font-size: 12px;
         font-size: 0.875rem;
         font-weight: 500;
       }

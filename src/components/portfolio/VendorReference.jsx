@@ -1,7 +1,6 @@
 import { useState } from "react";
 import InputField from "../common/InputField";
 import SelectInput from "../common/SelectInput";
-import { countryCodes } from "../../staticData.json";
 import { GoTriangleDown, GoTriangleRight } from "react-icons/go";
 import { RiArrowDownSLine } from "react-icons/ri";
 
@@ -35,17 +34,12 @@ export default function VendorReference({referenceData,index,handleChange}){
                         <label>Area Code</label>
                         <select
                             name="areaCode"
-                            value={areaCode}
+                            value={areaCode || "+1"}
                             onChange={(e) => handleChange(e, index)}
                             className="phone-area-code-select"
                             style={{ appearance: "none" }}
                         >
-                            <option value="">Select Area Code</option>
-                            {countryCodes.map((country) => (
-                                <option key={country.code} value={country.code}>
-                                    {country.code} ({country.name})
-                                </option>
-                            ))}
+                            <option value="+1">+1 </option>
                         </select>
                         <span>
                             <RiArrowDownSLine />
