@@ -67,7 +67,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 1px;
+    gap: 25px;
     width: 100%;
 }
 .portfolio-form-step-1-container1 , 
@@ -81,11 +81,11 @@
     align-items: center;
     gap: 20px;
     width: 1206px;
-    padding: 25px 0px 0px 0px;
+    /* padding: 25px 0px 0px 0px; */
     .portfolio-form-step-container-left ,
     .portfolio-form-step-container-right
     {
-        outline: 1px solid green;
+        /* outline: 1px solid green; */
         
         display: flex;
         flex-direction: column;
@@ -93,8 +93,7 @@
         align-items: center;
         width: 100%;
         position: relative;
-        margin-top: 10px;
-        padding: 2px 0px;
+        
         .input-field{
             width: 100%;
             padding: 1px 10px;
@@ -142,7 +141,7 @@
     align-items: center;
     gap: 20px;
     width: 1206px;
-    padding: 25px 0px 0px 0px;
+    
     .portfolio-form-step-container-left ,
     .portfolio-form-step-container-right
     {
@@ -154,8 +153,7 @@
         align-items: center;
         width: 100%;
         position: relative;
-        margin-top: 10px;
-        padding: 2px 0px;
+        /* margin and padding removed */
         .input-field{
             width: 100%;
             padding: 1px 10px;
@@ -195,6 +193,9 @@
   }
     }
 }
+
+
+
 #street-address{
   gap: 24px;
 }
@@ -207,7 +208,7 @@
         align-items: center;
         width: 15%;
         position: relative;
-        margin-top: 10px;
+        
         padding: 2px;
         label{
             position: absolute;
@@ -246,7 +247,6 @@
         
         width: 30%;
         position: relative;
-        margin-top: 10px;
         padding: 2px;
         .edit-phone-area-code {
             position: absolute;
@@ -298,7 +298,7 @@
         align-items: center;
         width: 70%;
         position: relative;
-        margin-top: 10px;
+        
         padding: 2px;
         label{
             position: absolute;
@@ -510,10 +510,9 @@
 }
 
 .portfolio-form-step-2-container1-right {
-    width: calc(100% - 185px);
+    width: 100%;
     position: relative;
-    margin-top: 10px;
-    padding: 2px;
+    
 }
 
 .portfolio-form-step-2-container2-left,
@@ -526,8 +525,8 @@
 .portfolio-form-step-2-container5-right {
     width: 100%;
     position: relative;
-    margin-top: 10px;
-    padding: 2px;
+    
+    
 }
 
 .portfolio-form-step-2 label {
@@ -565,20 +564,53 @@
 .portfolio-form-step-2-container6-left {
     width: 100%;
     position: relative;
+    
+    margin: 0;
+    padding: 0;
+    padding-bottom: 0px !important;
+
+    label{
+        position: absolute;
+        top: 9%;
+        left: 27px;
+        font-size: 13px;
+        color: var(--text-color);
+        font-family: Noto Sans;
+        font-weight: 400;
+        transition: 0.2s ease all;
+        pointer-events: none;
+        font-family: Noto Sans;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 16.34px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        color: #666666;
+        
+    }
+
 }
 
 .portfolio-form-step-2-container6-left textarea {
     width: 100%;
-    min-height: 120px;
+    margin: 0;
+    margin-bottom: 0px !important;
+    padding: 0;
     border-radius: 12px;
-    border: 1px solid rgba(210, 210, 210, 1);
-    background-color: #fff;
-    padding: 30px 24px 10px 24px;
-    font-size: 16px;
+    padding: 26px 40px 10px 27px;
+    background-color: var(--input-bg-color);
+    border:none;
     outline: none;
-    font-family: Noto Sans;
-    resize: vertical;
 }
+
+.social-media-children-container{
+    margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
 /* social media */
 #social-media-container-width{
   margin: 0 auto;

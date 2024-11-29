@@ -1,7 +1,7 @@
 
 const TextInput = ({ label, value, name, onChange }) => {
   return (
-    <div className="portfolio-form-step-2-container1-right">
+    <div id='text-area-input-step-2'className="portfolio-form-step-2-container1-right text-area-input-step-2">
       <label htmlFor={name}>{label}</label>
       <input
         type="text"

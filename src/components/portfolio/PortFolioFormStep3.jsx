@@ -28,7 +28,7 @@ export default function PortFolioFormStep3({setLocalStateForStep,localStateForSt
         })
     }
 	return (
-        <div className="portfolio-form-step-3-container">
+        <div className="portfolio-form-step-3-container get-form-responsive-width">
             <div className="references-container">
                 {references.map((referenceData,index) =>
                 <VendorReference

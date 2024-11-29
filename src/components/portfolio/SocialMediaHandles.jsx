@@ -44,6 +44,7 @@ const SocialMediaHandles = ({ socialMedia, handleLocalStateForStep, socialMediaO
       <div className="social-media-header-container get-form-responsive-width">
         <h3 onClick={toggleSocialMedia} className="social-media-header"><span>{showSocialMedia ? <GoTriangleDown /> : <GoTriangleRight />}</span> Social Media Handles</h3>
       </div>
+      <div className="social-media-children-container">
       {showSocialMedia && (
         <>
           {socialMedia.map((item, index) => (
@@ -88,6 +89,7 @@ const SocialMediaHandles = ({ socialMedia, handleLocalStateForStep, socialMediaO
           </div>
         </>
       )}
+      </div>
     </div>
   );
 };
