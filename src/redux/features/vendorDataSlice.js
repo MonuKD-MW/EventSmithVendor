@@ -31,6 +31,7 @@ const vendorDataSlice = createSlice({
 				"areaCode": "123",
 				"phone": "456-7890",
 				"referenceWebsite": "https://www.techsolutions.com",
+				"relationship": "Customer",
 				"address": "123 Innovation Drive, Tech City",
 				"postalCode": "T1C 4H2"
 			},
@@ -39,6 +40,7 @@ const vendorDataSlice = createSlice({
 				"areaCode": "987",
 				"phone": "654-3210",
 				"referenceWebsite": "https://www.greenenergy.com",
+				"relationship": "Business Relation",
 				"address": "456 Sustainability Lane, Eco Town",
 				"postalCode": "E7G 5B3"
 			}

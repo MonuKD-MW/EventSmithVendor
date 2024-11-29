@@ -7,7 +7,7 @@ import InputField from '../common/InputField';
 import SelectInput from "../common/SelectInput";
 import SocialMediaHandles from "./SocialMediaHandles"; // Import SocialMediaHandles Component
 import { socialMedia as socialMediaOptions } from "../../staticData.json"; // Import options
-
+import { RiArrowDownSLine } from 'react-icons/ri';
 const PortfolioFormStep2 = ({
   localStateForStep: {
     businessName,
@@ -79,17 +79,27 @@ const PortfolioFormStep2 = ({
             value={service || ""}
             options={serviceOptions}
             onChange={(e) => handleLocalStateForStep(e)}
+            
           />
         </div>
         <div className="portfolio-form-step-container-right">
-          <SelectInput
-            label="Sub-category*"
-            name="subCategory"
-            value={subCategory || ""}
-            options={getSubCategories(service)}
-            onChange={(e) => handleLocalStateForStep(e)}
-            multiple={multiple}
-          />
+        <label>Sub-category*</label>
+            <select
+              name="subCategory"
+              value={subCategory || ""}
+              onChange={(e) => handleLocalStateForStep(e)}
+              multiple={multiple}
+            >
+              <option value="">Select Sub-category</option>
+              {getSubCategories(service).map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+            <span>
+              <RiArrowDownSLine />
+            </span>
         </div>
       </div>
       {/* Address-1 and Address-2 */}

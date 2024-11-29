@@ -12,6 +12,7 @@ export default function PortFolioFormStep3({setLocalStateForStep,localStateForSt
 				"areaCode": "",
 				"phone": "",
 				"referenceWebsite": "",
+                "relationship": "",
 				"address": "",
 				"postalCode": ""
 			}]
@@ -28,8 +29,8 @@ export default function PortFolioFormStep3({setLocalStateForStep,localStateForSt
         })
     }
 	return (
-        <div className="portfolio-form-step-3-container get-form-responsive-width">
-            <div className="references-container">
+        <div id="reference-form-container-full-width" className="portfolio-form-step-3-container get-form-responsive-width">
+            <div id="references-container">
                 {references.map((referenceData,index) =>
                 <VendorReference
                 referenceData={referenceData}
@@ -38,7 +39,10 @@ export default function PortFolioFormStep3({setLocalStateForStep,localStateForSt
                 />)
                 }
             </div>
-            <button className="add-reference-button" onClick={handleAddReference}>Add Reference</button>
+            <div className="reference-add-button-container get-form-responsive-width remove-margin-x">
+                <button className="" onClick={handleAddReference}><span>+</span>Add Reference</button>
+            </div>
+            
         </div>
 
     )

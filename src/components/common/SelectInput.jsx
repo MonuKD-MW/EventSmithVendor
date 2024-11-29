@@ -1,5 +1,5 @@
 // SelectInput.js
-// import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
+import { RiArrowDownSLine } from 'react-icons/ri';
 
 const SelectInput = ({ label, name, value, options = [], onChange, multiple = false }) => {
   const selectedValue = multiple ? (Array.isArray(value) ? value : []) : value;
@@ -30,6 +30,7 @@ const SelectInput = ({ label, name, value, options = [], onChange, multiple = fa
           value={selectedValue}
           className="custom-select"
           multiple={multiple}
+          style={{ appearance: "none" }}
         >
           {options && options.length > 0 ? (
             options.map((option, index) => {
@@ -46,10 +47,9 @@ const SelectInput = ({ label, name, value, options = [], onChange, multiple = fa
             <option value="" disabled>No options available</option>
           )}
         </select>
-{/* 
-        <span className="icon">
-          <MdOutlineKeyboardArrowDown />
-        </span> */}
+          <span>
+            <RiArrowDownSLine />
+          </span>
       </div>
     </div>
   );
