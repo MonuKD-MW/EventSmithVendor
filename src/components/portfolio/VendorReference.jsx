@@ -1,6 +1,5 @@
 import { useState } from "react";
 import InputField from "../common/InputField";
-import SelectInput from "../common/SelectInput";
 import { GoTriangleDown, GoTriangleRight } from "react-icons/go";
 import { RiArrowDownSLine } from "react-icons/ri";
 import CustomSelect from "../common/CustomSelect";
@@ -15,7 +14,7 @@ export default function VendorReference({referenceData,index,handleChange}){
             <div className="reference-toggle-head reference-header-container">
                 <h3 onClick={handleToggle} className="reference-header">
                     <span>{isOpen ? <GoTriangleDown /> : <GoTriangleRight />}</span>
-                    Champion {index + 1}
+                    Reference {index + 1}
                 </h3>
             </div>
             {isOpen && (
@@ -32,15 +31,6 @@ export default function VendorReference({referenceData,index,handleChange}){
                     
                     <div className="portfolio-form-step1-area-code portfolio-area-code">
                         <label>Area Code*</label>
-                        {/* <select
-                            name="areaCode"
-                            value={areaCode || "+1"}
-                            onChange={(e) => handleChange(e, index)}
-                            className="phone-area-code-select"
-                            style={{ appearance: "none" }}
-                        >
-                            <option value="+1">+1 </option>
-                        </select> */}
                         <CustomSelect
                             placeholder="+1"
                             

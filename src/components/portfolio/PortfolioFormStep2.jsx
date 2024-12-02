@@ -1,10 +1,7 @@
 
-
-import { useDispatch } from "react-redux";
 import FileInput from "../common/FileInput";
 import TextInput from "../common/TextInput";
 import InputField from '../common/InputField';
-import SelectInput from "../common/SelectInput";
 import SocialMediaHandles from "./SocialMediaHandles"; // Import SocialMediaHandles Component
 import { socialMedia as socialMediaOptions } from "../../staticData.json"; // Import options
 import { RiArrowDownSLine } from 'react-icons/ri';
@@ -24,15 +21,12 @@ const PortfolioFormStep2 = ({
     socialMedia, // Ensure socialMedia is passed in the localStateForStep object
   },
   imagePreview,
-  handleFileChange,
   serviceOptions,
   countryCodes,
   regions,
   ServiceData,
-  multiple,
   handleLocalStateForStep,
 }) => {
-  const dispatch = useDispatch();
 
   const getSubCategories = (service) => {
     if (!service || service === "select service") return [];
@@ -87,19 +81,6 @@ const PortfolioFormStep2 = ({
         </div>
         <div className="portfolio-form-step-container-right">
         <label>Sub-category*</label>
-            {/* <select
-              name="subCategory"
-              value={subCategory || ""}
-              onChange={(e) => handleLocalStateForStep(e)}
-              multiple={multiple}
-            >
-              <option value="">Select Sub-category</option>
-              {getSubCategories(service).map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select> */}
             <CustomSelect
               placeholder="select sub-category"
               name="subCategory"
@@ -136,14 +117,6 @@ const PortfolioFormStep2 = ({
       <div className="portfolio-form-step-container">
         <div className="portfolio-form-step-container-left">
         <label>Province*</label>
-        {/* <SelectInput
-          label="Province*"
-          name="province"
-          value={province || ""}
-          options={regions[country]?.Provinces || []}
-          onChange={(e) => handleLocalStateForStep(e)}
-          disabled={!country}
-        /> */}
         <CustomSelect
           placeholder="select province"
           label="Province*"
@@ -168,13 +141,6 @@ const PortfolioFormStep2 = ({
       <div className="portfolio-form-step-container">
         <div className="portfolio-form-step-container-left">
         <label>Country*</label>
-        {/* <SelectInput
-          label="Country*"
-          name="country"
-          value={country || ""}
-          options={countryCodes}
-          onChange={(e) => handleLocalStateForStep(e)}
-        /> */}
         <CustomSelect
           placeholder="select country"
           label="Country*"
@@ -188,13 +154,6 @@ const PortfolioFormStep2 = ({
         </div>
         <div className="portfolio-form-step-container-right">
         <label>What is your role in the company*</label>
-        {/* <SelectInput
-          label="What is your role in the company*"
-          name="title"
-          value={title || ""}
-          options={["owner", "manager", "other"]}
-          onChange={(e) => handleLocalStateForStep(e)}
-        /> */}
         <CustomSelect
           placeholder="select role"
           label="What is your role in the company*"

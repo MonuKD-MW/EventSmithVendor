@@ -1,16 +1,21 @@
+
+
 .vendor-profile-nav-container {
     width: 240px;
     height: 800px;
     background-color: #fff;
     padding: 72px 8px 32px;
-    position: fixed;
-    top: 0;
+    position: absolute;
+    top: 0px;
     left: 0;
     z-index: 1000;
     box-shadow: 0 1px 8px rgba(3, 55, 211, 0.1);
+
 }
 .show-nav-btn{
-    position: fixed;
+    position: absolute;
+    width: 40px;
+    height: 40px;
     top: 10px;
     left: 10px;
     right: auto;
@@ -98,8 +103,8 @@
 /* Large devices (desktops, 992px - 1199px) */
 @media   (max-width: 1199px) {
     .vendor-profile-nav-container{
-      position: fixed;
-      top: 0;
+      position: absolute;
+      top: 0px;
       left: -240px;
       z-index: 1000;
       height: 100vh;
@@ -119,5 +124,13 @@
     .hide-vendor-profile-nav{
         left: -240px;
         opacity: 0;
+    }
+  }
+  @media (max-width: 1023px) {
+    .vendor-profile-nav-container{
+        top: 0px;
+    }
+    .show-nav-btn{
+        top: 10px;
     }
   }

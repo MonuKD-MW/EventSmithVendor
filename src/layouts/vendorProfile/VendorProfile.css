@@ -1,10 +1,11 @@
 .vendor-profile{
+    position: relative;
     background-color: #F5F5F5;
     max-width: 100%;
     min-height: 100vh;
     display: flex;
-    gap: 2rem;
-    overflow-x: hidden;
+    gap: 0rem;
+    /* overflow-x: hidden; */
     .vendor-side-panel{
         padding: 0 16px 16px 16px;
         font-family: 'Poppins', sans-serif ;
@@ -15,10 +16,18 @@
         cursor: pointer;
     }
 }
-
+.vendor-profile-nav-container-wrapper{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 100vh;
+    
+}
 @media (max-width: 768px) {
     .vendor-profile{
         width: 100%;
+       
         .vendor-side-panel{
             margin: 0;
             width: 100%;
@@ -30,12 +39,14 @@
 }
 @media   (max-width: 1199px) {
     .vendor-profile{
+        
         .vendor-side-panel{
             margin-left: 0;
             width: 100%;
-            
+            flex-direction: column;
             margin-right: auto;
             margin-left: auto;
+            
         }
     }
 }

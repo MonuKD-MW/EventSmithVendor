@@ -58,20 +58,9 @@ const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email,password,phone
       </div>
 
 
-
       <div className="portfolio-form-step-1-container3">
         <div className="portfolio-form-step1-area-code portfolio-area-code">
           <label htmlFor="phoneAreaCode">Area Code*</label>
-          {/* <select
-            id="phoneAreaCode"
-            name="phoneAreaCode"
-            value={areaCode || "+1"} // Default to "+1"
-            readOnly // Prevents user modification since there's only one option
-            className="phone-area-code-select"
-            style={{ appearance: "none" }}
-          >
-            <option value="+1">+1</option>
-          </select> */}
           <CustomSelect
             label="Area Code*"
             options={["+1"]}
@@ -101,35 +90,10 @@ const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email,password,phone
               
             </span>
           )} */}
-
-
-
-
-
-
-
-
-
-
       </div>
 
-
-
-        <div className="portfolio-form-step1-country">
+      <div className="portfolio-form-step1-country">
         <label htmlFor="country">Country*</label>
-          {/* <select
-            id="country"
-            name="country"
-            value={localStateForStep.country || ""}
-            onChange={(e)=>handleLocalStateForStep(e)}
-            style={{appearance:"none"}}
-          >
-            <option value="" disabled>
-              Select Country
-            </option>
-            <option value="Canada">Canada</option>
-            <option value="United States">United States</option>
-          </select> */}
           <CustomSelect
             placeholder="select country"
             label="Country*"
@@ -145,28 +109,7 @@ const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email,password,phone
 
       <div className="portfolio-form-step-1-container4">
         <div className="portfolio-form-step-container-left">
-          <label htmlFor="city">City*</label>
-          {/* <select
-            id="city"
-            name="city"
-            value={localStateForStep.city || ""}
-            onChange={(e) => handleLocalStateForStep(e)}
-            style={{appearance:"none"}}
-            
-          >
-            <option value="" disabled>
-              Select City
-            </option>
-            {localStateForStep?.country === 'Canada' ? (
-                [...regions.Canada.Provinces, ...regions.Canada.Territories].map((region) => (
-                    <option key={region} value={region}>{region}</option>
-                ))
-            ) : (
-                regions['United States'].Provinces.map((state) => (
-                    <option key={state} value={state}>{state}</option>
-                ))
-            )}
-          </select> */}    
+          <label htmlFor="city">City*</label>  
           <CustomSelect
             placeholder="select city"
             label="City*"

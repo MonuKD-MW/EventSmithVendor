@@ -226,10 +226,10 @@
 }
 
 #my-profile-heading {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  margin-top: 72px;
-  margin-bottom: 48px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   font-family: 'Poppins', sans-serif !important;
 }
 
@@ -244,6 +244,9 @@
 @media (max-width: 1199px) {
   .vendor-detail-outer-con {
     gap: 100px;
+  }
+  #my-profile-heading{
+    margin-top: 72px;
   }
 }
 
@@ -330,7 +333,7 @@
 
   #my-profile-heading {
     font-size: 1.5rem;
-    margin-top: 48px;
+    margin-top: 72px;
     margin-bottom: 32px;
   }
   .business-info .body-con .upload-logo-con {
@@ -354,6 +357,9 @@
     transform: none;
     width: 100%;
     margin-top: 24px;
+  }
+  #my-profile-heading{
+    margin-top: 72px;
   }
 
   .business-info .body-con .upload-logo-con .dashed-con {

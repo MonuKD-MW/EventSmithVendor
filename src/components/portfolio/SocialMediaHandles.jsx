@@ -1,8 +1,6 @@
 
 import { GoTriangleDown,GoTriangleRight } from "react-icons/go";
 import React, { useState } from "react";
-import SelectInput from "../common/SelectInput";
-import TextInput from "../common/TextInput";
 import InputField from "../common/InputField";
 import CustomSelect from "../common/CustomSelect";
 import { RiArrowDownSLine } from "react-icons/ri";
@@ -52,13 +50,6 @@ const SocialMediaHandles = ({ socialMedia, handleLocalStateForStep, socialMediaO
             <div id='social-media-container-width' key={index} className="portfolio-form-step-container">
               <div  className="portfolio-form-step-container-left">
               <label>Social Media Handles*</label>
-              {/* <SelectInput
-                label="Social Media Handles*"
-                name={`socialMediaHandles-${index}`}
-                value={item.socialMediaHandle}
-                options={socialMediaOptions}
-                onChange={(e) => handleInputChange(index, "socialMediaHandle", e.target.value)}
-              /> */}
               <CustomSelect
                 placeholder="select social media"
                 label="Social Media Handles*"
