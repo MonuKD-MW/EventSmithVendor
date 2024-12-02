@@ -13,13 +13,31 @@ const usePortFolio = () => {
 	console.log("[vendorData]",vendorData)
 	const [localStateForStep,setLocalStateForStep] = useState({...vendorData});
 
-	function handleLocalStateForStep(e){
+	function handleLocalStateForStep(e,fromSelect = false,label = ""){
+		if(fromSelect){
+			
+			if(label === "service"){
+				setLocalStateForStep(prevState => ({
+					...prevState,
+					service: e,
+					subCategory: []
+				}));
+			}else{
+
+				setLocalStateForStep(prevState => ({
+					...prevState,
+					[label]: e
+				}));
+			}
+
+		}else{
 		const {name, value} = e.target;
 		console.log("[name,value] : ",name,Array.isArray(value),value);
 		setLocalStateForStep(prevState => ({
 			...prevState,
 			[name]: value
 		}));	
+	}
 	}
 	function updateVendorDataWithLocalState(){
 		dispatch(updateVendorData(localStateForStep));
@@ -35,7 +53,7 @@ const usePortFolio = () => {
 	const stepNames = [
 		"Personal Information",
 		"Portfolio Information",
-		"References",
+		"Your Champions",
 		"Membership Package",
 	];
 
@@ -131,10 +149,20 @@ const usePortFolio = () => {
 	
 
 	// Get the options for services (categories)
-	const serviceOptions = Object.keys(ServiceData).map((key) => ({
-		value: key,
-		label: key,
-	}));
+	// ! nov 30th 2024
+	// const serviceOptions = Object.keys(ServiceData).map((key) => ({
+	// 	value: key,
+	// 	label: key,
+	// }));
+	const serviceOptions = [
+		"Venues",
+		"Photographers",
+		"Caterers",
+		"Event Planning",
+		"Event Decorators",
+		"Entertainers"
+	  ];
+	//! nov 30th 2024
 	const subCategoryOptions = vendorData.serviceType && ServiceData[vendorData.serviceType]
 		? Object.keys(ServiceData[vendorData.serviceType])
 			.filter(sub => ServiceData[vendorData.serviceType][sub] !== null)  // Filter out null values

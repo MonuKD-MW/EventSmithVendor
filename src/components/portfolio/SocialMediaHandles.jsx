@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import SelectInput from "../common/SelectInput";
 import TextInput from "../common/TextInput";
 import InputField from "../common/InputField";
-
+import CustomSelect from "../common/CustomSelect";
+import { RiArrowDownSLine } from "react-icons/ri";
 const SocialMediaHandles = ({ socialMedia, handleLocalStateForStep, socialMediaOptions }) => {
 // !toggle feature
   const [showSocialMedia, setShowSocialMedia] = useState(true);
@@ -50,13 +51,24 @@ const SocialMediaHandles = ({ socialMedia, handleLocalStateForStep, socialMediaO
           {socialMedia.map((item, index) => (
             <div id='social-media-container-width' key={index} className="portfolio-form-step-container">
               <div  className="portfolio-form-step-container-left">
-              <SelectInput
+              <label>Social Media Handles*</label>
+              {/* <SelectInput
                 label="Social Media Handles*"
                 name={`socialMediaHandles-${index}`}
                 value={item.socialMediaHandle}
                 options={socialMediaOptions}
                 onChange={(e) => handleInputChange(index, "socialMediaHandle", e.target.value)}
+              /> */}
+              <CustomSelect
+                placeholder="select social media"
+                label="Social Media Handles*"
+                options={socialMediaOptions}
+                value={item.socialMediaHandle}
+                onChange={(e) => handleInputChange(index, "socialMediaHandle", e.target.value)}
               />
+              <span>
+                <RiArrowDownSLine />
+              </span>
               </div>
               <div className="portfolio-form-step-container-right">
               <InputField
@@ -84,7 +96,7 @@ const SocialMediaHandles = ({ socialMedia, handleLocalStateForStep, socialMediaO
             onClick={handleAddSocialHandle}
           >
             <span>+</span>
-            Add More Social Handle
+            Add More Social Handles
           </button>
           </div>
         </>

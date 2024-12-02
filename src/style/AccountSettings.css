@@ -8,6 +8,7 @@
     font-weight: 600;
     margin-top: 72px;
     margin-bottom: 48px;
+    font-family: 'Poppins', sans-serif !important;
 }
 .account-settings-container{
     display: flex;
@@ -40,7 +41,7 @@
     border: 1.5px solid rgba(3, 55, 211, 0.2);
 } */
 
-.body-con{
+.account-settings-body-con{
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -62,12 +63,14 @@
         font-weight: 400;
         display: flex;
         align-items: center;
+        font-family: 'Poppins', sans-serif !important;
         span{
             color: #3EC100;
             font-size: 16px;
             margin-left: 10px;
             display: flex;
             align-items: center;
+            font-family: 'Poppins', sans-serif !important;
             gap: 5px;
             .verified-icon{
                 font-size: 20px;
@@ -79,6 +82,7 @@
     font-size: 16px;
     font-weight: 400;
     color: #2C2C2E;
+    font-family: 'Poppins', sans-serif !important;
 }
 .regular-account-settings-btn{
     padding: 8px 20px 8px 20px;
@@ -88,6 +92,7 @@
     font-weight: 400;
     background-color: #fff;
     color: #FF8214;
+    font-family: 'Poppins', sans-serif !important;
 }
 .account-settings-input{
     width:100%;
@@ -120,7 +125,7 @@
         color: #FF8214;
         font-size: 16px;
         font-weight: 400;
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Poppins', sans-serif !important;
         cursor: pointer;
         text-align: right;
 

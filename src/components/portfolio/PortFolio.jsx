@@ -28,6 +28,7 @@ function Portfolio() {
   } = usePortFolio();
 
   return (
+    <div className="wrapper">
     <div className="portfolio-container">
       {/* Step Titles and Pagination */}
       <Pagination
@@ -91,7 +92,7 @@ function Portfolio() {
           onClick={step === 2 ? handleNext: handleNext}
           disabled={step === 2 ? !vendorData.firstName || !vendorData.lastName : false} // Disable Next until form is valid (example validation)
         >
-          {/* {step === 2 ? "Create Account" : `Next`} */}
+          
           {step === 4 ? "Submit" : `Next`}
         </button>
       </div>  
@@ -102,6 +103,7 @@ function Portfolio() {
           <span className="signup-footer-text-login-portfolio">Login</span>
         </div>
       </div>
+    </div>
     </div>
   );
 }

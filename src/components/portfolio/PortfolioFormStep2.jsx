@@ -8,6 +8,7 @@ import SelectInput from "../common/SelectInput";
 import SocialMediaHandles from "./SocialMediaHandles"; // Import SocialMediaHandles Component
 import { socialMedia as socialMediaOptions } from "../../staticData.json"; // Import options
 import { RiArrowDownSLine } from 'react-icons/ri';
+import CustomSelect from "../common/CustomSelect";
 const PortfolioFormStep2 = ({
   localStateForStep: {
     businessName,
@@ -34,13 +35,12 @@ const PortfolioFormStep2 = ({
   const dispatch = useDispatch();
 
   const getSubCategories = (service) => {
-    const categories = service ? ServiceData[service] : {};
-    return categories
-      ? Object.keys(categories).map((key) => ({
-          value: key,
-          label: key,
-        }))
-      : [];
+    if (!service || service === "select service") return [];
+    
+    const serviceData = ServiceData[service];
+    if (!serviceData) return [];
+    
+    return Object.keys(serviceData);
   };
 
   return (
@@ -73,18 +73,21 @@ const PortfolioFormStep2 = ({
       {/* Service and Sub-category */}
       <div className="portfolio-form-step-container">
       <div className="portfolio-form-step-container-left">
-          <SelectInput
-            label="Service*"
+        <label>Service*</label>
+          <CustomSelect
+            placeholder="select service"
             name="service"
             value={service || ""}
             options={serviceOptions}
-            onChange={(e) => handleLocalStateForStep(e)}
-            
+            onChange={(e) => handleLocalStateForStep(e,true,"service")}
           />
+          <span>
+              <RiArrowDownSLine />
+            </span>
         </div>
         <div className="portfolio-form-step-container-right">
         <label>Sub-category*</label>
-            <select
+            {/* <select
               name="subCategory"
               value={subCategory || ""}
               onChange={(e) => handleLocalStateForStep(e)}
@@ -96,7 +99,15 @@ const PortfolioFormStep2 = ({
                   {option.label}
                 </option>
               ))}
-            </select>
+            </select> */}
+            <CustomSelect
+              placeholder="select sub-category"
+              name="subCategory"
+              value={subCategory || ""}
+              multiple={true}
+              options={getSubCategories(service)}
+              onChange={(e) => handleLocalStateForStep(e,true,"subCategory")}
+            />
             <span>
               <RiArrowDownSLine />
             </span>
@@ -124,14 +135,25 @@ const PortfolioFormStep2 = ({
       {/* Province and Postal Code */}
       <div className="portfolio-form-step-container">
         <div className="portfolio-form-step-container-left">
-        <SelectInput
+        <label>Province*</label>
+        {/* <SelectInput
           label="Province*"
           name="province"
           value={province || ""}
           options={regions[country]?.Provinces || []}
           onChange={(e) => handleLocalStateForStep(e)}
           disabled={!country}
+        /> */}
+        <CustomSelect
+          placeholder="select province"
+          label="Province*"
+          options={regions[country]?.Provinces || []}
+          value={province || ""}
+          onChange={(e) => handleLocalStateForStep(e,false,"province")}
         />
+        <span>
+          <RiArrowDownSLine />
+        </span>
         </div>
         <div className="portfolio-form-step-container-right">
         <InputField
@@ -145,22 +167,44 @@ const PortfolioFormStep2 = ({
       {/* Country and Title */}
       <div className="portfolio-form-step-container">
         <div className="portfolio-form-step-container-left">
-        <SelectInput
+        <label>Country*</label>
+        {/* <SelectInput
           label="Country*"
           name="country"
           value={country || ""}
           options={countryCodes}
           onChange={(e) => handleLocalStateForStep(e)}
+        /> */}
+        <CustomSelect
+          placeholder="select country"
+          label="Country*"
+          options={Object.keys(countryCodes).map((country) => countryCodes[country].name)}
+          value={country || ""}
+          onChange={(e) => handleLocalStateForStep(e,false,"country")}
         />
+        <span>
+          <RiArrowDownSLine />
+        </span>
         </div>
         <div className="portfolio-form-step-container-right">
-        <SelectInput
+        <label>What is your role in the company*</label>
+        {/* <SelectInput
           label="What is your role in the company*"
           name="title"
           value={title || ""}
           options={["owner", "manager", "other"]}
           onChange={(e) => handleLocalStateForStep(e)}
+        /> */}
+        <CustomSelect
+          placeholder="select role"
+          label="What is your role in the company*"
+          options={["owner", "manager", "other"]}
+          value={title || ""}
+          onChange={(e) => handleLocalStateForStep(e,false,"title")}
         />
+        <span>
+          <RiArrowDownSLine />
+        </span>
         </div>
       </div>
 

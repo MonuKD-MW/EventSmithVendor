@@ -40,7 +40,7 @@ export default function PortFolioFormStep3({setLocalStateForStep,localStateForSt
                 }
             </div>
             <div className="reference-add-button-container get-form-responsive-width remove-margin-x">
-                <button className="" onClick={handleAddReference}><span>+</span>Add Reference</button>
+                <button className="" onClick={handleAddReference}><span>+</span> Add More Champions</button>
             </div>
             
         </div>

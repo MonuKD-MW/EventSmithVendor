@@ -18,7 +18,7 @@ const Pagination = ({ stepNames, currentStep, getStepClass }) => {
   };
 
   return (
-    <div className="portfolio-title-container-pagination">
+    <div className="portfolio-title-container-pagination get-form-responsive-width">
       <div className="portfolio-title-container">
         {currentStep === 1 && (
           <h4 className="portfolio-title">Let&apos;s get started</h4>

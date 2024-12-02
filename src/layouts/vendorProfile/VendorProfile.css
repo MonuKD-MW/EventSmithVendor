@@ -11,6 +11,9 @@
         margin-left: 260px;
         width: calc(100% - 292px);
     }
+    button{
+        cursor: pointer;
+    }
 }
 
 @media (max-width: 768px) {

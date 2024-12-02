@@ -8,12 +8,19 @@
     --input-font-weight: 500;
   }
   
+  .wrapper{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 
   .portfolio-container {
-    overflow-x: hidden;
     
-    max-width: 1206px;
+  
+    max-width: 90%;
     margin: 0 auto;
     /* maybe you change margin bottom to 50px */
     margin-bottom: 100px;
@@ -119,6 +126,7 @@
             font-weight: 600;
             transition: 0.2s ease all;
             pointer-events: none;
+            z-index: 500;
         }
         input,select{
             width: 100%;
@@ -264,6 +272,7 @@
             font-weight: 600;
             transition: 0.2s ease all;
             pointer-events: none;
+            z-index: 500;
         }
         input,select{
             width: 100%;
@@ -321,6 +330,7 @@
             font-weight: 600;
             transition: 0.2s ease all;
             pointer-events: none;
+            z-index: 500;
         }
         select{
             width: 100%;
@@ -413,6 +423,7 @@
             font-weight: 600;
             transition: 0.2s ease all;
             pointer-events: none;
+            z-index: 500;
         }
         select{
             width: 100%;
@@ -444,7 +455,9 @@
     font-weight: 600;
     display: flex;
     justify-content: center;
-    width: 85%;
+    width: 100%;
+    
+    margin: 0 auto;
     gap: 21px;
     padding: 20px 0px;
   }
@@ -768,7 +781,7 @@
   }
 
 }
-.social-media-handle-button-container,.reference-add-button-container{
+.social-media-handle-button-container{
   text-align: right;
   button{
     font-family: Noto Sans;
@@ -783,6 +796,24 @@
     background:transparent;
     gap: 8px;
   }
+}
+.reference-add-button-container{
+    /* outline: 1px solid red; */
+    width: 100%;
+    margin:0px !important;
+    button{
+        outline:none;
+        border:none;
+        background:rgba(218, 214, 235, 0.6);
+        padding:8px 16px;
+        border-radius: 4px;
+        font-family: Noto Sans;
+        font-size: 16px;
+        font-weight: 500;
+        text-align: center;
+        color:rgba(18, 18, 18, 1);
+        max-width: 210px;
+    }
 }
 .reference-header-container{
   margin-bottom: 20px;
@@ -881,7 +912,7 @@
   color: var(--primary-color);
 }
 /* Responsive Design */
-@media (max-width: 1400px) {
+@media screen and (min-width: 1200px) {
   .get-form-responsive-width,
     .portfolio-container,
     .portfolio-title-container-pagination,
@@ -892,7 +923,9 @@
     .portfolio-form-step-1-container4,
     .portfolio-form-step-2,
     .button-container-portfolio,
-    .portfolio-form-step-container {
+    .portfolio-form-step-container,
+    .portfolio-pagination
+    {
         width: 95%;
         max-width: 95%;
     }
@@ -909,7 +942,8 @@
     .portfolio-form-step-1-container4,
     .portfolio-form-step-2,
     .button-container-portfolio,
-    .portfolio-form-step-container {
+    .portfolio-form-step-container
+     {
         width: 90%;
     }
 
@@ -917,6 +951,10 @@
     .portfolio-form-step-container-right {
         width: 48%;
     }
+    .portfolio-pagination{
+        width: 90% !important;
+        
+      }
     
 }
 
@@ -928,10 +966,14 @@
     .portfolio-form-step-1-container3,
     .portfolio-form-step-1-container4,
     .button-container-portfolio,
-    .portfolio-form-step-container{
+    .portfolio-form-step-container
+    {
         width: 90%;
         flex-direction: column;
 
+    }
+    .portfolio-pagination{
+      width: 90%;
     }
     .reference-form-container-full-width,
 #reference-form-row-1,
@@ -1012,7 +1054,7 @@
 
 @media (max-width: 576px) {
     .portfolio-container {
-        width: 95%;
+        width: 100%;
     }
 
     .button-container-portfolio {
@@ -1033,7 +1075,7 @@
 @media (max-width: 480px) {
     .portfolio-container {
         width: 100%;
-        padding: 1rem;
+        
     }
 
     .portfolio-pagination {
@@ -1058,13 +1100,12 @@
     .portfolio-form-step-1-container4,
     .portfolio-form-step-2,
     .button-container-portfolio,
-    .portfolio-form-step-container{
+    .portfolio-form-step-container
+    {
         width: 95%;
         max-width: 95%;
     }
-    .portfolio-container{
-      max-width: 1206px;
-    }
+    
     
 }
 

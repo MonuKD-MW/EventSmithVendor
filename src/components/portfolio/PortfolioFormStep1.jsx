@@ -1,7 +1,7 @@
 import InputField from '../common/InputField'; 
 import { RiArrowDownSLine } from 'react-icons/ri';
 import {regions} from "../../staticData.json"
-
+import CustomSelect from '../common/CustomSelect';
 
 const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email,password,phone,areaCode},handleLocalStateForStep,localStateForStep}) => {
 
@@ -62,7 +62,7 @@ const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email,password,phone
       <div className="portfolio-form-step-1-container3">
         <div className="portfolio-form-step1-area-code portfolio-area-code">
           <label htmlFor="phoneAreaCode">Area Code*</label>
-          <select
+          {/* <select
             id="phoneAreaCode"
             name="phoneAreaCode"
             value={areaCode || "+1"} // Default to "+1"
@@ -71,7 +71,13 @@ const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email,password,phone
             style={{ appearance: "none" }}
           >
             <option value="+1">+1</option>
-          </select>
+          </select> */}
+          <CustomSelect
+            label="Area Code*"
+            options={["+1"]}
+            value={areaCode || "+1"}
+            onChange={(e) => handleLocalStateForStep(e,false,"phoneAreaCode")}
+          />
           <span>
             <RiArrowDownSLine />
           </span>
@@ -111,7 +117,7 @@ const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email,password,phone
 
         <div className="portfolio-form-step1-country">
         <label htmlFor="country">Country*</label>
-          <select
+          {/* <select
             id="country"
             name="country"
             value={localStateForStep.country || ""}
@@ -123,7 +129,14 @@ const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email,password,phone
             </option>
             <option value="Canada">Canada</option>
             <option value="United States">United States</option>
-          </select>
+          </select> */}
+          <CustomSelect
+            placeholder="select country"
+            label="Country*"
+            options={["Canada","United States"]}
+            value={localStateForStep.country || ""}
+            onChange={(e) => handleLocalStateForStep(e,false,"country")}
+          />
           <span>
             <RiArrowDownSLine />
           </span>
@@ -133,7 +146,7 @@ const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email,password,phone
       <div className="portfolio-form-step-1-container4">
         <div className="portfolio-form-step-container-left">
           <label htmlFor="city">City*</label>
-          <select
+          {/* <select
             id="city"
             name="city"
             value={localStateForStep.city || ""}
@@ -153,7 +166,14 @@ const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email,password,phone
                     <option key={state} value={state}>{state}</option>
                 ))
             )}
-          </select>
+          </select> */}    
+          <CustomSelect
+            placeholder="select city"
+            label="City*"
+            options={localStateForStep?.country === 'Canada' ? [...regions.Canada.Provinces, ...regions.Canada.Territories] : regions['United States'].Provinces}
+            value={localStateForStep.city || ""}
+            onChange={(e) => handleLocalStateForStep(e,false,"city")}
+          />
           <span>
             <RiArrowDownSLine />
           </span>

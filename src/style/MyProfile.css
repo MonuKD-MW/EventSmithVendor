@@ -21,7 +21,7 @@
 
 .vendor-detail-outer-con {
   display: flex;
-  gap: 54px;
+  gap: 200px;
   justify-content: flex-start;
 }
 
@@ -169,13 +169,14 @@
 
 .data-label {
   color: rgba(0, 0, 0, 0.6);
+  font-family: 'Poppins', sans-serif !important;
   font-size: 16px;
   font-weight: 500;
 }
 
 .data-value {
   color: #000000;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif !important;
   font-size: 18px;
   font-weight: 600;
 }
@@ -229,9 +230,36 @@
   font-weight: 600;
   margin-top: 72px;
   margin-bottom: 48px;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 /* Media Queries */
+
+@media (max-width: 1440px) {
+  .vendor-detail-outer-con {
+    gap: 120px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .vendor-detail-outer-con {
+    gap: 100px;
+  }
+}
+
+@media (min-width: 1199px) {
+  .body-con {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+}
+
+@media (max-width: 850px) {
+  .vendor-detail-outer-con {
+    gap: 80px;
+  }
+}
+
 @media (max-width: 768px) {
   
 
@@ -317,11 +345,7 @@
   }
 }
 
-@media (min-width: 1199px) {
-  /* .vendor-details, .personal-info, .business-info {
-    width: calc(1000px);
-  } */
-}
+
 
 /* Small Screen Adjustments */
 @media (max-width: 575px) {

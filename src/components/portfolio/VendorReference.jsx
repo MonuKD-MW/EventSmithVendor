@@ -3,7 +3,7 @@ import InputField from "../common/InputField";
 import SelectInput from "../common/SelectInput";
 import { GoTriangleDown, GoTriangleRight } from "react-icons/go";
 import { RiArrowDownSLine } from "react-icons/ri";
-
+import CustomSelect from "../common/CustomSelect";
 export default function VendorReference({referenceData,index,handleChange}){
     const {referenceBusinessName,areaCode,phone,referenceWebsite,address,postalCode,relationship} = referenceData;
     const [isOpen,setIsOpen] = useState(true);
@@ -15,7 +15,7 @@ export default function VendorReference({referenceData,index,handleChange}){
             <div className="reference-toggle-head reference-header-container">
                 <h3 onClick={handleToggle} className="reference-header">
                     <span>{isOpen ? <GoTriangleDown /> : <GoTriangleRight />}</span>
-                    Reference {index + 1}
+                    Champion {index + 1}
                 </h3>
             </div>
             {isOpen && (
@@ -24,15 +24,15 @@ export default function VendorReference({referenceData,index,handleChange}){
                     <div className="reference-left">
                         <InputField
                         name="referenceBusinessName"
-                        label={`Business/client reference name ${index+1}`}
+                        label={`Business/client reference name ${index+1}*`}
                         value={referenceBusinessName}
                         onChange={(e)=>handleChange(e,index)}
                         />
                     </div>
                     
                     <div className="portfolio-form-step1-area-code portfolio-area-code">
-                        <label>Area Code</label>
-                        <select
+                        <label>Area Code*</label>
+                        {/* <select
                             name="areaCode"
                             value={areaCode || "+1"}
                             onChange={(e) => handleChange(e, index)}
@@ -40,7 +40,14 @@ export default function VendorReference({referenceData,index,handleChange}){
                             style={{ appearance: "none" }}
                         >
                             <option value="+1">+1 </option>
-                        </select>
+                        </select> */}
+                        <CustomSelect
+                            placeholder="+1"
+                            
+                            options={["+1"]}
+                            value={areaCode || ""}
+                            onChange={(e) => handleChange(e, index)}
+                        />
                         <span>
                             <RiArrowDownSLine />
                         </span>
@@ -48,7 +55,7 @@ export default function VendorReference({referenceData,index,handleChange}){
                     <div className="reference-right">
                         <InputField
                         name="phone"
-                        label="Phone"
+                        label="Phone*"
                         value={phone}
                         onChange={(e)=>handleChange(e,index)}
                         />
@@ -59,7 +66,7 @@ export default function VendorReference({referenceData,index,handleChange}){
                     <div className="portfolio-form-step-container-left">
                         <InputField
                         name="referenceWebsite"
-                        label="Reference Website"
+                        label="Website"
                         value={referenceWebsite}
                         onChange={(e)=>handleChange(e,index)}
                         />
@@ -67,7 +74,7 @@ export default function VendorReference({referenceData,index,handleChange}){
                     <div className="portfolio-form-step-container-right">
                         <InputField
                         name="relationship"
-                        label="Relationship"
+                        label="Relationship*"
                         value={relationship}
                         onChange={(e)=>handleChange(e,index)}
                         />
@@ -85,7 +92,7 @@ export default function VendorReference({referenceData,index,handleChange}){
                     <div className="portfolio-form-step-container-right">   
                         <InputField
                         name="postalCode"
-                        label="Postal Code"
+                        label="Postal Code*"
                         value={postalCode}
                         onChange={(e)=>handleChange(e,index)}
                         />

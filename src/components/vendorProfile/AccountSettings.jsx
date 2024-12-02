@@ -11,7 +11,7 @@ const AccountSettings = () => {
                         <h2>Login Info</h2>
                     </div>
                     <div className="divider"/>
-                    <div className="body-con">
+                    <div className="body-con account-settings-body-con">
                         <div className="login-info-data-grp">
                             <div className="data-label">Email</div>
                             <div className="data-value">abc@xyz.com <span><IoMdCheckmark className="verified-icon"/> Verified</span></div>
@@ -32,7 +32,7 @@ const AccountSettings = () => {
                         <h2>Login Info</h2>
                     </div>
                     <div className="divider"/>
-                    <div className="body-con">
+                    <div className="body-con account-settings-body-con">
                         <div className="login-info-data-grp">
                             <div className="data-label">Email</div>
                             <div className="data-value">abc@xyz.com <span className="not-verified-icon"><TbCircleLetterX className="verified-icon"/> Not Verified</span></div>
@@ -56,7 +56,7 @@ const AccountSettings = () => {
                         <h2>Login Info</h2>
                     </div>
                     <div className="divider"/>
-                    <div className="body-con">
+                    <div className="body-con account-settings-body-con">
                         <div className="login-info-data-grp">
                             <div className="data-label">Email</div>
                             <div className="data-value">abc@xyz.com <span ><IoMdCheckmark className="verified-icon"/> Not Verified</span></div>
@@ -98,7 +98,7 @@ const AccountSettings = () => {
                         <h2>Login Info</h2>
                     </div>
                     <div className="divider"/>
-                    <div className="body-con">
+                    <div className="body-con account-settings-body-con">
                         
                         {/* //! change here */}
                         <div className="login-info-data-grp">
