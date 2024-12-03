@@ -8,7 +8,7 @@ const Pagination = ({ stepNames, currentStep, getStepClass }) => {
       "A Business Portfolio maps directly to your business and acts like your own personal website"
     ],
     "3": [
-      "Your Champions",
+      "Your References",
       "Worked with any businesses lately? Provide us with at least 2 references who would vouch for your awesomeness!"
     ],
     "4": [

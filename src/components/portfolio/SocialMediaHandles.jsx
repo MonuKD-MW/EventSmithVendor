@@ -22,12 +22,12 @@ const SocialMediaHandles = ({ socialMedia, handleLocalStateForStep, socialMediaO
     });
   };
 
-  // const handleRemoveSocialHandle = (index) => {
-  //   const updatedHandles = socialMedia.filter((_, idx) => idx !== index);
-  //   handleLocalStateForStep({
-  //     target: { name: "socialMedia", value: updatedHandles },
-  //   });
-  // };
+  const handleRemoveSocialHandle = (index) => {
+    if(socialMedia.length > 1 ){
+      const updatedHandles = socialMedia.slice(0,-1);
+      handleLocalStateForStep(updatedHandles,true,"socialMedia");
+    }
+  };
 
   const handleInputChange = (index, field, value) => {
     const updatedHandles = socialMedia.map((item, idx) =>
@@ -80,15 +80,22 @@ const SocialMediaHandles = ({ socialMedia, handleLocalStateForStep, socialMediaO
               </button> */}
             </div>
           ))}
-          <div className="social-media-handle-button-container get-form-responsive-width">
-          <button
-            type="button"
-            className="sadd-handle-btn"
-            onClick={handleAddSocialHandle}
-          >
-            <span>+</span>
-            Add More Social Handles
-          </button>
+          <div className="social-media-handle-button-container ">
+            <button
+              type="button"
+              className="sadd-handle-btn"
+              onClick={handleAddSocialHandle}
+            >
+              <span>+</span>
+              Add More Social Handles
+            </button>
+            <button
+                  type="button"
+                  className="remove-handle-btn"
+                  onClick={() => handleRemoveSocialHandle()}
+            >
+                  - Remove Handle
+            </button>
           </div>
         </>
       )}

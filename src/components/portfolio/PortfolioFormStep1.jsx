@@ -3,7 +3,7 @@ import { RiArrowDownSLine } from 'react-icons/ri';
 import {regions} from "../../staticData.json"
 import CustomSelect from '../common/CustomSelect';
 
-const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email,password,phone,areaCode},handleLocalStateForStep,localStateForStep}) => {
+const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email},handleLocalStateForStep,localStateForStep}) => {
 
   console.log("[localStateForStep]",localStateForStep)
 
@@ -45,55 +45,7 @@ const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email,password,phone
           />
         </div>
         <div className="portfolio-form-step-container-right">
-          <InputField
-            label="Password*"
-            type="password"
-            id="password"
-            name="password"
-            value={password || ""}
-            
-            isDisabled={true}
-          />
-        </div>
-      </div>
-
-
-      <div className="portfolio-form-step-1-container3">
-        <div className="portfolio-form-step1-area-code portfolio-area-code">
-          <label htmlFor="phoneAreaCode">Area Code*</label>
-          <CustomSelect
-            label="Area Code*"
-            options={["+1"]}
-            value={areaCode || "+1"}
-            onChange={(e) => handleLocalStateForStep(e,false,"phoneAreaCode")}
-          />
-          <span>
-            <RiArrowDownSLine />
-          </span>
-        </div>
-        <div className="portfolio-form-step1-phone-number">
-          <InputField
-            label="Phone Number*"
-            type="text"
-            id="phoneNumber"
-            name="phoneNumber"
-            value={phone || ""}
-            isDisabled={true}
-
-          />
-          {/* think about phone verification later */}
-          {/* {vendorData.phoneVerified && (
-            <span className="edit-phone-area-code">
-              {vendorData.phoneVerified && <FaCheck className="edit-phone-area-code-icon" />}
-              {vendorData.phoneVerified ? 'Verified' : 'Unverified'}
-              
-              
-            </span>
-          )} */}
-      </div>
-
-      <div className="portfolio-form-step1-country">
-        <label htmlFor="country">Country*</label>
+         <label htmlFor="country">Country*</label>
           <CustomSelect
             placeholder="select country"
             label="Country*"
@@ -106,6 +58,7 @@ const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email,password,phone
           </span>
         </div>
       </div>
+
 
       <div className="portfolio-form-step-1-container4">
         <div className="portfolio-form-step-container-left">

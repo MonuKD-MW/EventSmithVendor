@@ -13,8 +13,8 @@ const usePortFolio = () => {
 	console.log("[vendorData]",vendorData)
 	const [localStateForStep,setLocalStateForStep] = useState({...vendorData});
 
-	function handleLocalStateForStep(e,fromSelect = false,label = ""){
-		if(fromSelect){
+	function handleLocalStateForStep(e,fromCustom = false,label = ""){
+		if(fromCustom){
 			
 			if(label === "service"){
 				setLocalStateForStep(prevState => ({
@@ -22,7 +22,8 @@ const usePortFolio = () => {
 					service: e,
 					subCategory: []
 				}));
-			}else{
+			}
+			if(label === "socialMedia"){
 
 				setLocalStateForStep(prevState => ({
 					...prevState,
@@ -53,7 +54,7 @@ const usePortFolio = () => {
 	const stepNames = [
 		"Personal Information",
 		"Portfolio Information",
-		"Your Champions",
+		"Your References",
 		"Membership Package",
 	];
 

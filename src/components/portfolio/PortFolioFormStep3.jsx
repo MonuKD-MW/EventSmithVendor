@@ -28,6 +28,15 @@ export default function PortFolioFormStep3({setLocalStateForStep,localStateForSt
             references: updatedReferences
         })
     }
+    const handleRemoveReference = () => {
+        if(references.length > 2 ){
+            const updatedReferences = references.slice(0,-1);
+            setLocalStateForStep({
+                ...localStateForStep,
+                references: updatedReferences
+            })
+        }
+    }
 	return (
         <div id="reference-form-container-full-width" className="portfolio-form-step-3-container get-form-responsive-width">
             <div id="references-container">
@@ -39,8 +48,9 @@ export default function PortFolioFormStep3({setLocalStateForStep,localStateForSt
                 />)
                 }
             </div>
-            <div className="reference-add-button-container get-form-responsive-width remove-margin-x">
+            <div className="reference-add-button-container">
                 <button className="" onClick={handleAddReference}><span>+</span> Add More References</button>
+                {references.length > 2 && <button className="reference-add-button-container-button" onClick={handleRemoveReference}><span>-</span> Remove Reference</button>}
             </div>
             
         </div>

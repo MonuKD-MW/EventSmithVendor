@@ -1,11 +1,13 @@
 
 import FileInput from "../common/FileInput";
-import TextInput from "../common/TextInput";
+// import TextInput from "../common/TextInput";
+import { useState } from "react";
 import InputField from '../common/InputField';
 import SocialMediaHandles from "./SocialMediaHandles"; // Import SocialMediaHandles Component
 import { socialMedia as socialMediaOptions } from "../../staticData.json"; // Import options
 import { RiArrowDownSLine } from 'react-icons/ri';
 import CustomSelect from "../common/CustomSelect";
+import { RiPencilLine } from "react-icons/ri";
 const PortfolioFormStep2 = ({
   localStateForStep: {
     businessName,
@@ -20,7 +22,6 @@ const PortfolioFormStep2 = ({
     country,
     socialMedia, // Ensure socialMedia is passed in the localStateForStep object
   },
-  imagePreview,
   serviceOptions,
   countryCodes,
   regions,
@@ -37,26 +38,67 @@ const PortfolioFormStep2 = ({
     return Object.keys(serviceData);
   };
 
+  // !file upload Functions
+  const [imagePreview, setImagePreview] = useState(null)
+  const [showOptions, setShowOptions] = useState(false)
+
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0]
+    if (file) {
+      const reader = new FileReader()
+      reader.onloadend = () => {
+        setImagePreview(reader.result)
+        handleLocalStateForStep({ target: { name: 'businessLogoUrl', value: reader.result } })
+      }
+      reader.readAsDataURL(file)
+    }
+  }
+
+  const handleRemoveImage = () => {
+    setImagePreview(null)
+    handleLocalStateForStep({ target: { name: 'businessLogoUrl', value: null } })
+  }
+
   return (
     <div className="portfolio-form-step-1">
       {/* Business Logo */}
       <div className="portfolio-form-step-container">
-        
-          <div className="business-logo-container">
-          <FileInput
-            label="Business Logo"
-            name="businessLogoUrl"
-            onChange={(e) => handleLocalStateForStep(e)}
+        <div 
+          className="business-logo-container"
+          onMouseEnter={() => setShowOptions(true)}
+          onMouseLeave={() => setShowOptions(false)}
           >
+          <div className="logo-preview">
             {imagePreview ? (
-            <img src={imagePreview} alt="Business Logo Preview" />
+              <img src={imagePreview} alt="Business Logo Preview" />
             ) : (
-              <div className="placeholder">Upload Logo</div>
+              <div className="placeholder-img-div">Business Logo
+              <br />
+              <span>
+                <RiPencilLine />
+              </span>
+              </div>
             )}
-          </FileInput>
           </div>
-        <div className="portfolio-form-step-container-right">
-          <TextInput
+          {showOptions && (
+            <div className="options-overlay">
+          <FileInput
+            label="Change Image"
+            name="businessLogoUrl"
+            onChange={handleImageUpload}
+          />
+          {imagePreview && (
+            <button onClick={handleRemoveImage} className="remove-button">Remove Image</button>
+          )}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Business Name */}
+      <div className="portfolio-form-step-container">
+        <div className="portfolio-form-step-container-left">
+          <InputField
             label="Business Name*"
             value={businessName || ""}
             name="businessName"

@@ -97,12 +97,7 @@ function Portfolio() {
         </button>
       </div>  
 
-      <div className="signup-footer-portfolio">
-        <div className="signup-footer-text-portfolio">
-          Already A Member?{" "}
-          <span className="signup-footer-text-login-portfolio">Login</span>
-        </div>
-      </div>
+      
     </div>
     </div>
   );
