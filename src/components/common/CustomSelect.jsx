@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import '../../style/CustomSelect.css';
 import { FaCheck } from "react-icons/fa6";
+import TagRenders from '../common/TagRenders';
 const CustomSelect = ({ 
   options, 
   multiple = false, 
@@ -53,7 +54,7 @@ const CustomSelect = ({
       return placeholder;
     }
     if (multiple) {
-      return `${selectedOptions.length} selected`;
+      return <TagRenders selectedOptions={selectedOptions} onChange={handleOptionClick} />  ;
     }
     return selectedOptions;
   };

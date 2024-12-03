@@ -17,8 +17,11 @@ const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email},handleLocalSt
             type="text"
             id="firstName"
             name="firstName"
-            value={firstName || ""}
-            isDisabled={true}
+            value={localStateForStep.firstName || ""}//fn not comming from vendorData so when intergrating with api we need to change this initialize the redux store casue the initail LocalStateForStep is vendorDataSlice
+            readOnly={false}
+            isDisable={true}
+            editable={true}
+            onChange={(e) => handleLocalStateForStep(e)}
           />
         </div>
         <div className="portfolio-form-step-container-right">
@@ -27,8 +30,10 @@ const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email},handleLocalSt
             type="text"
             id="lastName"
             name="lastName"
-            value={lastName || ""}
-            isDisabled={true}
+            value={localStateForStep.lastName || ""}
+            isDisable={true}
+            editable={true}
+            onChange={(e) => handleLocalStateForStep(e)}
           />
         </div>
       </div>
@@ -40,8 +45,10 @@ const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email},handleLocalSt
             type="email"
             id="email"
             name="email"
-            value={email || ""}
-            isDisabled={true}
+            value={localStateForStep.email || ""}
+            editable={true}
+            isDisable={true}
+            onChange={(e) => handleLocalStateForStep(e)}
           />
         </div>
         <div className="portfolio-form-step-container-right">
@@ -51,7 +58,7 @@ const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email},handleLocalSt
             label="Country*"
             options={["Canada","United States"]}
             value={localStateForStep.country || ""}
-            onChange={(e) => handleLocalStateForStep(e,false,"country")}
+            onChange={(e) => handleLocalStateForStep(e,true,"country")}
           />
           <span>
             <RiArrowDownSLine />
@@ -68,7 +75,7 @@ const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email},handleLocalSt
             label="City*"
             options={localStateForStep?.country === 'Canada' ? [...regions.Canada.Provinces, ...regions.Canada.Territories] : regions['United States'].Provinces}
             value={localStateForStep.city || ""}
-            onChange={(e) => handleLocalStateForStep(e,false,"city")}
+            onChange={(e) => handleLocalStateForStep(e,true,"city")}
           />
           <span>
             <RiArrowDownSLine />

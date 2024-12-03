@@ -55,3 +55,14 @@
         width: 1.25rem;
         height: 1.25rem;
       }
+
+      .common-input-field.disabled input{
+        background-color: rgba(158, 161, 171, 0.15) !important;
+        color: rgba(154, 154, 154, 1) !important;
+        
+      }
+
+      .common-input-field.disabled label{
+        color: rgba(154, 154, 154, 1) !important;
+      }
+      

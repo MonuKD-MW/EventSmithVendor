@@ -23,8 +23,7 @@ const usePortFolio = () => {
 					subCategory: []
 				}));
 			}
-			if(label === "socialMedia"){
-
+			else{
 				setLocalStateForStep(prevState => ({
 					...prevState,
 					[label]: e
@@ -32,6 +31,7 @@ const usePortFolio = () => {
 			}
 
 		}else{
+			console.log("------------------------[e]--------------------------",e)
 		const {name, value} = e.target;
 		console.log("[name,value] : ",name,Array.isArray(value),value);
 		setLocalStateForStep(prevState => ({
@@ -41,6 +41,7 @@ const usePortFolio = () => {
 	}
 	}
 	function updateVendorDataWithLocalState(){
+		console.log("------------------------[localStateForStep]--------------------------",localStateForStep)
 		dispatch(updateVendorData(localStateForStep));
 	}
 	function handleSubCategoryChange(e) {

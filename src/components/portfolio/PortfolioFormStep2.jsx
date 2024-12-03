@@ -8,6 +8,7 @@ import { socialMedia as socialMediaOptions } from "../../staticData.json"; // Im
 import { RiArrowDownSLine } from 'react-icons/ri';
 import CustomSelect from "../common/CustomSelect";
 import { RiPencilLine } from "react-icons/ri";
+
 const PortfolioFormStep2 = ({
   localStateForStep: {
     businessName,
@@ -41,6 +42,7 @@ const PortfolioFormStep2 = ({
   // !file upload Functions
   const [imagePreview, setImagePreview] = useState(null)
   const [showOptions, setShowOptions] = useState(false)
+  const [firstMouseEnter, setFirstMouseEnter] = useState(true)
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0]
@@ -48,6 +50,7 @@ const PortfolioFormStep2 = ({
       const reader = new FileReader()
       reader.onloadend = () => {
         setImagePreview(reader.result)
+        setFirstMouseEnter(false)
         handleLocalStateForStep({ target: { name: 'businessLogoUrl', value: reader.result } })
       }
       reader.readAsDataURL(file)
@@ -56,6 +59,7 @@ const PortfolioFormStep2 = ({
 
   const handleRemoveImage = () => {
     setImagePreview(null)
+    setFirstMouseEnter(true)
     handleLocalStateForStep({ target: { name: 'businessLogoUrl', value: null } })
   }
 
@@ -65,22 +69,27 @@ const PortfolioFormStep2 = ({
       <div className="portfolio-form-step-container">
         <div 
           className="business-logo-container"
-          onMouseEnter={() => setShowOptions(true)}
+          onMouseEnter={() => {
+            !firstMouseEnter && setShowOptions(true)
+          }}
           onMouseLeave={() => setShowOptions(false)}
           >
           <div className="logo-preview">
             {imagePreview ? (
               <img src={imagePreview} alt="Business Logo Preview" />
             ) : (
-              <div className="placeholder-img-div">Business Logo
-              <br />
-              <span>
-                <RiPencilLine />
-              </span>
+              <div className="placeholder-img-div">
+                <FileInput
+                  id="businessLogoUrl"
+                  label="Business Logo"
+                  name="businessLogoUrl"
+                  onChange={handleImageUpload}
+                />
+              
               </div>
             )}
           </div>
-          {showOptions && (
+          {!firstMouseEnter && showOptions && (
             <div className="options-overlay">
           <FileInput
             label="Change Image"
@@ -121,7 +130,7 @@ const PortfolioFormStep2 = ({
               <RiArrowDownSLine />
             </span>
         </div>
-        <div className="portfolio-form-step-container-right">
+        <div className="portfolio-form-step-container-right responsive-hight-select-container">
         <label>Sub-category*</label>
             <CustomSelect
               placeholder="select sub-category"
@@ -164,7 +173,7 @@ const PortfolioFormStep2 = ({
           label="Province*"
           options={regions[country]?.Provinces || []}
           value={province || ""}
-          onChange={(e) => handleLocalStateForStep(e,false,"province")}
+          onChange={(e) => handleLocalStateForStep(e,true,"province")}
         />
         <span>
           <RiArrowDownSLine />
@@ -188,7 +197,7 @@ const PortfolioFormStep2 = ({
           label="Country*"
           options={Object.keys(countryCodes).map((country) => countryCodes[country].name)}
           value={country || ""}
-          onChange={(e) => handleLocalStateForStep(e,false,"country")}
+          onChange={(e) => handleLocalStateForStep(e,true,"country")}
         />
         <span>
           <RiArrowDownSLine />
@@ -201,7 +210,7 @@ const PortfolioFormStep2 = ({
           label="What is your role in the company*"
           options={["owner", "manager", "other"]}
           value={title || ""}
-          onChange={(e) => handleLocalStateForStep(e,false,"title")}
+          onChange={(e) => handleLocalStateForStep(e,true,"title")}
         />
         <span>
           <RiArrowDownSLine />

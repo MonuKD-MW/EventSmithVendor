@@ -36,7 +36,7 @@ export default function VendorReference({referenceData,index,handleChange}){
                             
                             options={["+1"]}
                             value={areaCode || ""}
-                            onChange={(e) => handleChange(e, index)}
+                            onChange={(e) => handleChange({target: {name: "areaCode", value: e}}, index)}
                         />
                         <span>
                             <RiArrowDownSLine />

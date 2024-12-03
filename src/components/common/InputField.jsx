@@ -1,14 +1,29 @@
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { RiPencilLine } from "react-icons/ri";
+import { useState, useRef } from "react";
 import '../../style/InputField.css'
 
-const InputField = ({ label, type, name, value, onChange, required, readOnly, passwordToggle, setPasswordToggle,isDisable=false }) => {
+const InputField = ({ label, type, name, value, onChange, required, readOnly=false,editable, passwordToggle, setPasswordToggle,isDisable=false }) => {
     const isPassword = label.toLowerCase() === 'password';
+    const [toggleDisabled,setToggleDisabled] = useState(isDisable)
+    const inputRef = useRef(null);
+
+    const handlePencilClick = () => {
+        setToggleDisabled(!toggleDisabled);
+        if (toggleDisabled && inputRef.current) {
+            setTimeout(() => {// use setTimeout so setToggleDisabled is called first and complete its execution
+                inputRef.current.focus();
+                inputRef.current.select();
+            }, 0);
+        }
+    };
 
     return (
-        <div className="common-input-field">
+        <div className={`common-input-field ${toggleDisabled ? "disabled" : ""}`}>
             <label htmlFor={name}>{label}{required && '*'}</label>
             <div className="common-input-wrapper">
                 <input
+                    ref={inputRef}
                     type={isPassword ? (passwordToggle ? "text" : "password") : type}
                     name={name}
                     id={name}
@@ -16,12 +31,15 @@ const InputField = ({ label, type, name, value, onChange, required, readOnly, pa
                     value={value}
                     required={required}
                     readOnly={readOnly}
-                    disabled={isDisable}
+                    disabled={toggleDisabled}
                 />
                 {isPassword && (
                     <span className="common-password-icon" onClick={() => setPasswordToggle(!passwordToggle)}>
                         {passwordToggle ? <FaEyeSlash /> : <FaEye />}
                     </span>
+                )}
+                {editable && (
+                    <span className="common-pencil-icon" onClick={handlePencilClick}><RiPencilLine/></span>
                 )}
             </div>
         </div>

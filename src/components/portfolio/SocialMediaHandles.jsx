@@ -30,9 +30,11 @@ const SocialMediaHandles = ({ socialMedia, handleLocalStateForStep, socialMediaO
   };
 
   const handleInputChange = (index, field, value) => {
+    console.log(value,field,index)
     const updatedHandles = socialMedia.map((item, idx) =>
       idx === index ? { ...item, [field]: value } : item
     );
+    console.log(updatedHandles)
     handleLocalStateForStep({
       target: { name: "socialMedia", value: updatedHandles },
     });
@@ -55,7 +57,7 @@ const SocialMediaHandles = ({ socialMedia, handleLocalStateForStep, socialMediaO
                 label="Social Media Handles*"
                 options={socialMediaOptions}
                 value={item.socialMediaHandle}
-                onChange={(e) => handleInputChange(index, "socialMediaHandle", e.target.value)}
+                onChange={(e) => handleInputChange(index, "socialMediaHandle", e)}
               />
               <span>
                 <RiArrowDownSLine />
@@ -89,6 +91,7 @@ const SocialMediaHandles = ({ socialMedia, handleLocalStateForStep, socialMediaO
               <span>+</span>
               Add More Social Handles
             </button>
+            {socialMedia.length > 1 && (
             <button
                   type="button"
                   className="remove-handle-btn"
@@ -96,6 +99,7 @@ const SocialMediaHandles = ({ socialMedia, handleLocalStateForStep, socialMediaO
             >
                   - Remove Handle
             </button>
+            )}
           </div>
         </>
       )}
