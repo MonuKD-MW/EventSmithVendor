@@ -2,10 +2,12 @@
     /* --primary-color: rgba(58, 117, 196, 1); */
     --primary-color:  #630F7F;
     --secondary-color: #2ecc71;
-    --text-color: rgba(102, 102, 102, 1);
+    --label-text-color: rgba(102, 102, 102, 1);
+    --text-color: rgba(18, 18, 18, 1);
     --input-bg-color: #F9FAFA;
     --input-font-size: 14px;
     --input-font-weight: 500;
+    --noto-sans-font: Noto Sans;
   }
   
   .wrapper{
@@ -118,10 +120,10 @@
         label,option{
             position: absolute;
             width: 100%;
-            top: 9%;
+            top: 20%;
             left: 24px;
             font-size: 12px;
-            color: var(--text-color);
+            color: var(--label-text-color);
             font-family: Noto Sans;
             font-weight: 600;
             transition: 0.2s ease all;
@@ -134,7 +136,7 @@
             border-radius: 12px;
             border: 1px solid rgba(210, 210, 210, 1);
             background-color: var(--input-bg-color);
-            padding: 15px 40px 10px 24px;
+            padding: 15px 40px 4px 24px;
             font-size: var(--input-font-size);
             font-weight: var(--input-font-weight);
             outline: none;
@@ -144,7 +146,7 @@
         }
         span{
             position: absolute;
-      top: 35%;
+      
       right: 30px;
       font-size: 15px;
   }
@@ -168,10 +170,10 @@
         label,option{
             position: absolute;
             width: 100%;
-            top: 9%;
+            top: 20%;
             left: 24px;
             font-size: 12px;
-            color: var(--text-color);
+            color: var(--label-text-color);
             font-family: Noto Sans;
             font-weight: 600;
             transition: 0.2s ease all;
@@ -183,7 +185,7 @@
             border-radius: 12px;
             border: 1px solid rgba(210, 210, 210, 1);
             background-color: var(--input-bg-color);
-            padding: 15px 40px 10px 24px;
+            padding: 15px 40px 4px 24px;
             font-size: var(--input-font-size);
             font-weight: var(--input-font-weight);
             outline: none;
@@ -209,10 +211,10 @@
         label,option{
             position: absolute;
             width: 100%;
-            top: 9%;
+            top: 20%;
             left: 24px;
             font-size: 12px;
-            color: var(--text-color);
+            color: var(--label-text-color);
             font-family: Noto Sans;
             font-weight: 600;
             transition: 0.2s ease all;
@@ -224,7 +226,7 @@
             border-radius: 12px;
             border: 1px solid rgba(210, 210, 210, 1);
             background-color: var(--input-bg-color);
-            padding: 15px 40px 10px 24px;
+            padding: 15px 40px 4px 24px;
             font-size: var(--input-font-size);
             font-weight: var(--input-font-weight);
             outline: none;
@@ -264,10 +266,10 @@
         label,option{
             position: absolute;
             width: 100%;
-            top: 9%;
+            top: 20%;
             left: 24px;
             font-size: 12px;
-            color: var(--text-color);
+            color: var(--label-text-color);
             font-family: Noto Sans;
             font-weight: 600;
             transition: 0.2s ease all;
@@ -280,7 +282,7 @@
             border-radius: 12px;
             border: 1px solid rgba(210, 210, 210, 1);
             background-color: var(--input-bg-color);
-            padding: 15px 40px 10px 24px;
+            padding: 15px 40px 4px 24px;
             font-size: var(--input-font-size);
             font-weight: var(--input-font-weight);
             outline: none;
@@ -324,16 +326,16 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 15%;
+        width: 180px;
         position: relative;
         
         padding: 2px;
         label{
             position: absolute;
-            top: 9%;
+            top: 20%;
             left: 24px;
             font-size: 12px;
-            color: var(--text-color);
+            color: var(--label-text-color);
             font-family: Noto Sans;
             font-weight: 600;
             transition: 0.2s ease all;
@@ -345,7 +347,7 @@
             height: 59px;
             border-radius: 12px;
             border: 1px solid rgba(210, 210, 210, 1);
-            padding: 15px 40px 10px 24px;
+            padding: 15px 40px 4px 24px;
             font-size: var(--input-font-size);
             font-weight: var(--input-font-weight);
             outline: none;
@@ -356,7 +358,7 @@
         }
         span{
             position: absolute;
-            top: 35%;
+            top: 45%;
             right: 30px;
             font-size: 15px;
         }
@@ -389,7 +391,7 @@
             top: 9%;
             left: 24px;
             font-size: 12px;
-            color: var(--text-color);
+            color: var(--label-text-color);
             font-family: Noto Sans;
             font-weight: 600;
             transition: 0.2s ease all;
@@ -400,7 +402,7 @@
             height: 59px;
             border-radius: 12px;
             border: 1px solid rgba(210, 210, 210, 1);
-            padding: 15px 40px 10px 24px;
+            padding: 15px 40px 4px 24px;
             font-size: var(--input-font-size);
             font-weight: var(--input-font-weight);
             outline: none;
@@ -426,7 +428,7 @@
             top: 9%;
             left: 27px;
             font-size: 12px;
-            color: var(--text-color);
+            color: var(--label-text-color);
             font-family: Noto Sans;
             font-weight: 600;
             transition: 0.2s ease all;
@@ -438,7 +440,7 @@
             height: 59px;
             border-radius: 12px;
             border: 1px solid rgba(210, 210, 210, 1);
-            padding: 15px 40px 10px 24px;
+            padding: 15px 40px 4px 24px;
             font-size: var(--input-font-size);
             font-weight: var(--input-font-weight);
             outline: none;
@@ -472,7 +474,11 @@
 .pagination-step {
   cursor: pointer;
   text-align: center;
-  width: 100%;
+  
+  /* for not wrapping word */
+  width: max-content !important;
+  white-space: nowrap;
+  
 }
 
 
@@ -760,7 +766,7 @@
     top: 9%;
     left: 24px;
     font-size: 12px;
-    color: var(--text-color);
+    color: var(--label-text-color);
     font-family: Noto Sans;
     font-weight: 600;
     transition: 0.2s ease all;
@@ -774,7 +780,7 @@
     border-radius: 12px;
     border: 1px solid rgba(210, 210, 210, 1);
     background-color: #fff;
-    padding: 15px 40px 10px 24px;
+    padding: 15px 40px 4px 24px;
     font-size: var(--input-font-size);
     font-weight: var(--input-font-weight);
     outline: none;
@@ -801,7 +807,7 @@
         top: 9%;
         left: 27px;
         font-size: 12px;
-        color: var(--text-color);
+        color: var(--label-text-color);
         font-family: Noto Sans;
         font-weight: 600;
         transition: 0.2s ease all;
@@ -825,7 +831,7 @@
     margin-bottom: 0px !important;
     padding: 0;
     border-radius: 12px;
-    padding: 26px 40px 10px 27px;
+    padding: 26px 40px 4px 27px;
     background-color: var(--input-bg-color);
     font-size: var(--input-font-size);
     font-weight: var(--input-font-weight);
@@ -974,10 +980,10 @@
                 label,option{
                     position: absolute;
                     width: 100%;
-                    top: 9%;
+                    top: 20%;
                     left: 24px;
                     font-size: 12px;
-                    color: var(--text-color);
+                    color: var(--label-text-color);
                     font-family: Noto Sans;
                     font-weight: 600;
                     transition: 0.2s ease all;
@@ -989,7 +995,7 @@
                     border-radius: 12px;
                     border: 1px solid rgba(210, 210, 210, 1);
                     background-color: var(--input-bg-color);
-                    padding: 15px 40px 10px 24px;
+                    padding: 15px 40px 4px 24px;
                     font-size: var(--input-font-size);
                     font-weight: var(--input-font-weight);
                     outline: none;
@@ -1066,7 +1072,15 @@
     }
     .portfolio-pagination{
         width: 90% !important;
-        
+        .pagination-line{
+            width: 40%;
+            flex-grow:0;
+        }
+        .pagination-step{
+            width: auto ; /* Reset the width to its default */
+  white-space: normal;    /* Allow wrapping */
+  overflow: visible;      /* Make overflow visible */
+        }
       }
     
 }

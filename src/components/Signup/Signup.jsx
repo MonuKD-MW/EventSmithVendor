@@ -22,17 +22,17 @@ const
     <div className='signup-container'>
       {/* Step Titles and Pagination */}
       <div className='signup-title-container'>
-        <h4 className='signup-title'>Let&apos;s get started</h4>
+        <h4 className='signup-title'>{step===1 ? "Let's get started" : "Almost there!"}</h4>
         <h3 className='signup-title-2'>Create your account</h3>
       </div>
 
-      <div className="pagination">
+      <div className="singup-pagination">
         {stepNames.map((name, index) => (
           <React.Fragment key={index}>
-            <div className={`pagination-step ${getStepClass(index + 1)}`}>
+            <div className={`singup-pagination-step ${getStepClass(index + 1)}`}>
               {name}
             </div>
-            {index < stepNames.length - 1 && <div className="pagination-line"></div>}
+            {index < stepNames.length - 1 && <div className="singup-pagination-line"></div>}
           </React.Fragment>
         ))}
       </div>

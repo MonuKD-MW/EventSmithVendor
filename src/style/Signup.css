@@ -1,8 +1,7 @@
 .signup-container {
     max-width: 925px;
     width: 100%;
-    height: auto;
-    padding: 1rem;
+    /* padding: 1rem; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,7 +45,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 925px;
+    width: 100%;
     gap: 24px;
 }
 
@@ -64,11 +63,12 @@
     justify-content: space-evenly;
     gap: 16px;
     width: 100%;
+    margin-bottom: 3px;
 }
 
 /* Common Styles for Form Fields */
 .signup-step1-lower-right-area-code{
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
 
     gap: 16px;
@@ -92,6 +92,48 @@
         
      
 
+    } */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    position: relative;
+    
+    padding: 2px;
+    label{
+        position: absolute;
+        top: 9%;
+        left: 24px;
+        font-size: 12px;
+        color: var(--text-color);
+        font-family: Noto Sans;
+        font-weight: 600;
+        transition: 0.2s ease all;
+        pointer-events: none;
+        z-index: 500;
+    }
+    select{
+        width: 100%;
+        height: 59px;
+        border-radius: 12px;
+        border: 1px solid rgba(210, 210, 210, 1);
+        padding: 15px 40px 4px 24px;
+        font-size: var(--input-font-size);
+        font-weight: var(--input-font-weight);
+        outline: none;
+        border: none;
+        font-family: Noto Sans;
+        background-color: var(--input-bg-color);
+        outline: 1px solid red;
+
+    }
+    span{
+        position: absolute;
+        top: 50%;
+        transform: translate(0%,-50%);
+        right: 30px;
+        font-size: 15px;
     }
 
 }
@@ -114,10 +156,21 @@
     width: 50%;
     position: relative;
     .signup-step1-lower-right-area-code{
-        width: 25%;
+        width: 160px;
+        label{
+          /* outline: 1px solid red; */
+          color: var(--label-text-color);
+          top: 20%;
+        }
+        input{
+          outline: 1px solid red impr !important;
+        }
+        span{
+          top:60% !important;
+        }
     }
     .signup-step1-lower-right-phone{
-        width: 75%;
+        width: 100%;
     }
 }
 .third-party-login-container{
@@ -174,7 +227,7 @@
 }
 /* Input Field Styles */
 /* Pagination Styles */
-.pagination {
+.singup-pagination {
   font-family: Noto Sans;
   font-size: 16px;
   font-weight: 600;
@@ -184,32 +237,40 @@
   gap: 21px;
 }
 
-.pagination-step {
+.singup-pagination-step {
   cursor: pointer;
   text-align: center;
+  
+  /* for not wrapping word */
+  width: max-content !important;
+  white-space: nowrap;
+  overflow: hidden;
   /* width: 100%;   */
   /* background-color: red; */
 }
 
-
-.pagination-step.completed {
-  color: rgba(255, 130, 20, 1);
+.singup-pagination-step.upcoming{
+  /* color: rgba(255, 130, 20, 1) ; */
+}
+.singup-pagination-step.completed {
+  color: rgba(255, 130, 20, 1) !important;
+  
 }
 
-.pagination-step.current {
-  color: rgba(255, 130, 20, 1);
+.singup-pagination-step.current {
+  color: rgba(255, 130, 20, 1) !important ;
   font-weight: 600;
 }
 
-.pagination-step:hover {
+.singup-pagination-step:hover {
   color: rgba(44, 44, 46, 1);
 }
 
 /* Horizontal Line Between Steps */
-.pagination-line {
+.singup-pagination-line {
   width: 20%; /* Adjust the length of the line */
   height: 2px; /* Line thickness */
-  background-color: rgba(255, 130, 20, 1); /* Line color */
+  background-color: rgba(255, 130, 20, 1) !important; /* Line color */
   /* margin: 0 10px; Controls space around the line */
   align-self: center; /* Ensures the line is vertically centered between steps */
 }
@@ -229,8 +290,8 @@
 .signup-step3 {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  margin-top: 5rem;
+  gap: 30px;
+  margin-top: 2.2rem;
   width: 100%;
 }
 
@@ -246,7 +307,7 @@
   width: 50%;
   display: flex;
   flex-direction: column;
-  gap: 36px;
+  gap: 30px !important;
 }
 
 /* Upper Right: Phone OTP and Email OTP */
@@ -254,34 +315,39 @@
   width: 50%;
   display: flex;
   flex-direction: column;
-  gap: 36px;
-
+  gap: 30px !important;
 }
 
 /* Upper Phone Number Section: Area Code and Phone Number (30-70 Split) */
 .signup-step3-upper-phone {
   display: flex;
-  gap: 8px;
-  width: 98%;
+  gap: 24px;
+  width: 100%;
+ 
+  justify-content: space-between;
 }
 
 /* Area Code: 30% Width */
 .area-code {
-  flex: 0 0 30%;
+  flex-basis: 105px;
+  max-width: 105px;
+  flex-shrink: 0;
   position: relative;
+
   /* width: 01%; */
 }
 
 /* Phone Number Field: 70% Width */
 .signup-step3-upper-field-phone {
-  flex: 0 0 70%;
+  width:90%;
+  
   display: flex;
   flex-direction: column;
   position: relative;
   span{
     position: absolute;
-    left:90%;
-    top:30%;
+    /* left:90%; */
+    
 
   }
 }
@@ -304,15 +370,7 @@
   }
 
 }
-.email-field{
 
-  span{
-    position: absolute;
-    left:90%;
-    top:30%;
-
-  }
-}
 
 /* Floating Label Animation */
 
@@ -328,6 +386,7 @@
   display: flex;
   gap: 16px;
   width: 100%;
+  margin-bottom: 13px;
 }
 
 /* Lower Left: Password */
@@ -357,7 +416,7 @@
 /* Icon Styles (Eye Toggle) */
 .signup-step3-lower-field svg {
   position: absolute;
-  right: 24px;
+  right: -3px;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
@@ -369,10 +428,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
+
     height: 15%;
     flex-direction: column;
     padding: 16px;
+    padding-top: 11px;
     /* background-color: red; */
     width: 100%;
     .signup-footer-text{
@@ -383,7 +443,7 @@
       text-align: center;
       height: 21px;
       span{
-        color: rgba(255, 130, 20, 1);
+        color: rgba(99, 15, 127, 1);
       }
     }
     .vendor-login-container{
@@ -394,7 +454,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: rgba(58, 191, 196, 1);
+      background-color: rgba(99, 15, 127, 1);
       gap: 0px;
       border-radius: 12px;
       opacity: 0px;
@@ -412,7 +472,8 @@
       }
     }
   }
-
+  /* btn-login signup */
+  
   
   /* Base styles remain the same as original */
 
@@ -433,7 +494,7 @@
 @media screen and (max-width: 992px) {
   .signup-container {
     width: 95%;
-    gap: 0.8rem;
+    gap: 13px;
     padding: 0px 12px;
   }
 
@@ -445,10 +506,10 @@
   .signup-step3 {
     width: 100%;
   }
-
-  .button-container {
+/* !change */
+  /* .button-container {
     padding: 0 1rem;
-  }
+  } */
 }
 
 /* Small Screens (Tablets) */
@@ -458,7 +519,7 @@
   .signup-step3-upper,
   .signup-step3-lower {
     flex-direction: column;
-    gap: 12px;
+    gap: 24px;
   }
 
   .signup-step1-upper-left,
@@ -470,25 +531,30 @@
   .signup-step3-lower-left,
   .signup-step3-lower-right {
     width: 100%;
-    gap: 36px;
+    gap: 24px;
   }
 
   .signup-title-2 {
     font-size: 24px;
   }
 
-  .pagination {
+  .singup-pagination {
     width: 80%;
   }
 
   .third-party-login-container {
-    width: 100%;
     justify-content: center;
   }
 
   .vendor-login-container {
     width: 100%;
     max-width: 310px;
+  }
+  .signup-step3-upper-phone {
+    gap:12px;
+  }
+  .signup-step3-upper-left{
+    gap:24px !important;
   }
 }
 
@@ -497,7 +563,6 @@
   .signup-container {
     padding: 1rem;
     gap: 0.5rem;
-    margin-top: 4rem;
   }
 
   .signup-title {
@@ -532,7 +597,10 @@
     font-size: 14px;
   }
 
-  .pagination {
+
+  
+
+  .singup-pagination {
     width: 100%;
     gap: 12px;
     font-size: 14px;

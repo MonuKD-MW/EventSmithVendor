@@ -3,9 +3,10 @@ import { RiPencilLine } from "react-icons/ri";
 import { useState, useRef } from "react";
 import '../../style/InputField.css'
 
-const InputField = ({ label, type, name, value, onChange, required, readOnly=false,editable, passwordToggle, setPasswordToggle,isDisable=false }) => {
-    const isPassword = label.toLowerCase() === 'password';
-    const [toggleDisabled,setToggleDisabled] = useState(isDisable)
+const InputField = ({ label, type, name, value, onChange, required, readOnly=false,editable,isDisable=false }) => {
+    const isPassword = label.toLowerCase() === 'password' || label.toLowerCase() === 'confirm password';
+    const [toggleDisabled,setToggleDisabled] = useState(isDisable);
+    const [passwordToggle,setPasswordToggle] = useState(false);
     const inputRef = useRef(null);
 
     const handlePencilClick = () => {
@@ -35,7 +36,7 @@ const InputField = ({ label, type, name, value, onChange, required, readOnly=fal
                 />
                 {isPassword && (
                     <span className="common-password-icon" onClick={() => setPasswordToggle(!passwordToggle)}>
-                        {passwordToggle ? <FaEyeSlash /> : <FaEye />}
+                        {passwordToggle ?  <FaEye /> : <FaEyeSlash />}
                     </span>
                 )}
                 {editable && (

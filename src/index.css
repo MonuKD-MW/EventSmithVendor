@@ -1,5 +1,8 @@
 root{
     --main-background-color--: #fff
+    --font-noto-sans: 'Noto Sans', sans-serif;   
+    --font-poppins : 'Poppins', sans-serif;
+    
 }
 * {
     margin: 0;

@@ -1,0 +1,150 @@
+/* Accordion Container */
+.accordion-container {
+    width: 100%;
+    padding: 2.5rem;
+    border-radius: 0.5rem;
+    background-color: transparent;
+
+  }
+  
+  /* Accordion Controls */
+  .accordion-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  /* Accordion Buttons */
+  .accordion-button {
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem;
+    background-color: #DAD6EB99;
+    color: #2c2c2e;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    outline: none;
+    border: none;
+    font-family: Noto Sans;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16.34px;
+    text-align: left;
+    padding: 6px 16px;
+
+  }
+  
+  .accordion-button:hover {
+    background-color: #d6d6d6;
+  }
+  
+  /* Accordion Item */
+  .accordion-item {
+    /* border-bottom: 1px solid #ddd; */
+  }
+  
+  .accordion-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* Accordion Trigger */
+  .accordion-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 10px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+  }
+  
+  .accordion-trigger::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10px; /* Start the border 10px from the left */
+    right: 10px; /* End the border 10px from the right */
+    height: 1px; /* Thickness of the border */
+    background-color: #ddd; /* Color of the border */
+  }
+  
+  /* Add this new rule to remove border from last trigger */
+  .accordion-item:last-child .accordion-trigger::after {
+    display: none;
+  }
+  
+  
+  
+  .accordion-trigger:hover {
+    background-color: #f1f1f1;
+
+  }
+  
+  /* Accordion Title */
+  .accordion-title {
+    font-family: var(--font-noto-sans);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24.52px;
+
+
+  }
+  
+  /* Accordion Icon */
+  .accordion-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  /* Accordion Content */
+  .accordion-content {
+    background-color: #fff;
+    padding: 1rem 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  
+  /* Accordion Sub Item */
+  .accordion-sub-item {
+
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+  }
+  .accordion-sub-item:first-child {
+    
+  }
+  /* Accordion Sub Trigger */
+  .accordion-sub-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .accordion-sub-trigger:hover {
+    background-color: #f8f8f8;
+  }
+  
+  /* Accordion Sub Title */
+  .accordion-sub-title {
+    padding-left: 0.75rem 0rem;
+    color: #555;
+  }
+  
+  /* Accordion Sub Content */
+  .accordion-sub-content {
+    padding: 0.5rem 2rem;
+    color: #666;
+    font-size: 0.875rem;
+  }
+  
+  @media (max-width: 596px) {
+    .accordion-container{
+      padding: 20px 0px;
+    }
+    
+  }

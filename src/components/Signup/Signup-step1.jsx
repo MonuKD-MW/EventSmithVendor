@@ -5,6 +5,7 @@ import google from "../../assets/google.png";
 import { useForm } from 'react-hook-form';
 import useSignup from '../../utils/CustomHook/useSignup';
 import { useState } from 'react';
+import CustomSelect from "../common/CustomSelect"
 
 const SignupStep1 = () => {
   const {  formState: { errors } } = useForm();
@@ -88,19 +89,17 @@ const SignupStep1 = () => {
 
           <div className="signup-step1-lower-right">
             <div className="signup-step1-lower-right-area-code">
-              <InputField
-                label="Area Code"
-                type="text"
-                id="areaCode"
-                name="areaCode"
-                value={localVendorData?.areaCode || '+1'}
-                onChange={handleLocalInputChange}
-                required
-                error={errors.areaCode}
-              />
-              <span className="edit-phone-area-code">
-                <RiArrowDownSLine />
+              <label>Area Code*</label>
+                  <CustomSelect
+                    placeholder="+1"  
+                    options={["+1"]}
+                    value={'+1' || ""}
+                    onChange={(e) => handleChange({target: {name: "areaCode", value: e}}, index)}
+                  />
+              <span>
+                    <RiArrowDownSLine />
               </span>
+            
             </div>
 
             <InputField

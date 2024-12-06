@@ -1,6 +1,12 @@
 .main-header {
     width: 100%;
     font-family: sans-serif;
+    position: relative;
+
+  }
+  .header-white-bg{
+    background-color: white;
+    border-bottom: none;
   }
   
   .top-bar {
@@ -64,7 +70,7 @@
     flex-direction: row;
     align-items: center;
     padding: 0 30px;
-    height: 172px;
+    min-height: 172px;
   }
   
   .logo-container {
@@ -173,6 +179,39 @@
     border-radius: 2px;
   }
   
+
+  .become-vendor-header-content{
+    padding:  24px;
+    min-height: 172px !important;
+  }
+  .for-become-vendor-login-button{
+    padding: 8px 10px ;
+    border-radius: 2px;
+    border: 1px solid #630F7F;
+    color:#630F7F;
+    background-color: white;
+    cursor: pointer;
+  }
+  .signup-button{
+    padding: 8px 10px ;
+    border-radius: 2px;
+    border: 1px solid #630F7F;
+    background-color: #630F7F;
+    cursor: pointer;
+    a{
+      text-decoration: none;
+      color: white;
+    }
+  }
+  .for-become-vendor-top-bar{
+    position: absolute;
+    right: 7px;
+    top:50%;
+    transform: translateY(-50%);
+    
+  }
+  
+
   @media (max-width: 950px) {
     .menu-button {
       display: block;
@@ -250,6 +289,30 @@
       width: 100%;
       text-align: center;
     }
+
+    .for-become-vendor-top-bar{
+      top: 10%;
+    }
+    .become-vendor-mobile-login-btn{
+      background-color: #630F7F;
+      color: white;
+      cursor: pointer;
+      a{
+        text-decoration: none;
+        color: white;
+      }
+    }
+    .become-vendor-logo-container{
+      .logo-image{
+        padding-top: 20px;
+      }
+    }
+    .become-vendor-header-text-color{
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+    
   }
   
   

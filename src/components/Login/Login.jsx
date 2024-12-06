@@ -44,6 +44,9 @@ function Login() {
             <p>Don&apos;t have an account? <Link to="/signup">Sign Up</Link></p>
             <p><Link to="/forgot-password">Forgot Password?</Link></p>
           </div>
+          <div className="know-more">
+          <p>Want to know more before before signing up? <Link to='/become-vendor'>Click here</Link></p>
+          </div>
         </form>
         </div>
       </div>

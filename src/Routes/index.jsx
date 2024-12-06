@@ -5,6 +5,7 @@ import SignupPage from '../layouts/auth/signUp/SignupPage'
 import Portfolio from '../components/portfolio/PortFolio'
 import { useAuth } from '../context/AuthContext';
 import VendorProfile from "../layouts/vendorProfile/VendorProfile";
+import BecomeAVendor from "../layouts/becomeAVendor/BecomeAVendor";
 function AppRoutes() {
   const { isLoggedIn } = useAuth();
 
@@ -14,6 +15,7 @@ function AppRoutes() {
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/portfolio" element={<Portfolio />} />
       <Route path="/vendor-profile" element={<VendorProfile/>} />
+      <Route path="/become-vendor" element={<BecomeAVendor/>}/>
     </Routes>
   );
 }

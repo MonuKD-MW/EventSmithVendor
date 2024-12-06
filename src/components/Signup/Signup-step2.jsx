@@ -38,7 +38,8 @@ const SignupStep2 = () => {
                 name="areaCode"
                 value={vendorData.areaCode}
                 onChange={(e) => handleInputChange(e)}
-                readOnly
+                isDisable={true}
+                readOnly={true}
               />
               {error.phoneAreaCode && (
                 <span className="error-message">{error.phoneAreaCode}</span>
@@ -52,12 +53,11 @@ const SignupStep2 = () => {
                 id="phone"
                 name="phone"
                 value={vendorData.phone}
-                readOnly={!editPhone}
+                readOnly={false}
                 onChange={(e) => handleInputChange(e)}
+                isDisable={true}
+                editable={true}
               />
-              <span onClick={() => setEditPhone(!editPhone)}>
-                <RiPencilLine />
-              </span>
             </div>
           </div>
 
@@ -68,12 +68,12 @@ const SignupStep2 = () => {
               id="emailId"
               name="emailId"
               value={vendorData.emailId}
-              readOnly={!editEmail}
+              // readOnly={!editEmail}
+              readOnly={false}
               onChange={(e) => handleInputChange(e)}
+              isDisable={true}
+              editable={true}
             />
-            <span onClick={() => setEditEmail(!editEmail)}>
-              <RiPencilLine />
-            </span>
           </div>
         </div>
 
@@ -152,11 +152,6 @@ const SignupStep2 = () => {
               value={vendorData.confirmPassword}
               onChange={(e) => handleInputChange(e)}
               required
-            />
-            <IoMdEyeOff
-              onClick={() =>
-                setConfirmPasswordToggle(!confirmPasswordToggle)
-              }
             />
           </div>
         </div>

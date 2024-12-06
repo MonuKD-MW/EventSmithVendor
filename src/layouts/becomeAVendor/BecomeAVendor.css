@@ -1,0 +1,270 @@
+/* General Container */
+.become-a-vendor-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #2B2338 0%, #F4D7D0 66.13%, #F8DDD4 100%);
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    padding: 16px;
+  }
+  
+  .hero-text {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 25px;
+    margin-top: 115px;
+    margin-left: 72px;
+  }
+  
+  .hero-title {
+    font-size: 48px;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    font-family: var(--font-noto-sans) ;
+    color: white;
+  }
+  
+  .hero-description {
+    color: #E5E5E5;
+    font-size: 16px;
+    text-align: left;
+    max-width: 457px;
+  }
+  
+  .btn-proceed {
+    background-color: #F79C42;
+    font-family: var(--font-noto-sans);
+    font-weight: 600;
+    font-size: 18px;
+    color: white;
+    outline: none;
+    border:none;
+    padding: 9px 48px;
+    border-radius: 12px;
+
+  }
+  
+  /* Features Section */
+  .features-section {
+    padding: 32px;
+    display: flex;
+    justify-content: center;
+    
+    .container{
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      width: 100%;
+    }
+
+  }
+  
+  .features-header {
+    text-align: center;
+
+    padding: 40px 72px 8px 72px;
+    .section-title {
+      font-size: 32px;
+      font-weight: 600;
+      color: white;
+      font-family: var(--font-noto-sans);
+      height: 60px;
+
+    }
+  }
+  
+  
+  
+  .section-description {
+    color: white;
+    padding-top: 10px;
+    font-family: Noto Sans;
+    font-size: 14px;
+    font-weight: 400;
+
+    letter-spacing: 0.02em;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+  }
+  
+  .features-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill,minmax(397px,397px));
+    place-content: center center;
+  }
+  
+  /* Pricing Section */
+  .pricing-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    
+
+  }
+  
+  .pricing-header {
+    text-align: center;
+  }
+  
+  .pricing-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #361F31;
+  }
+  
+  .pricing-subtitle {
+    font-size: 1rem;
+    text-align: center;
+    color: #361F31;
+
+  }
+  
+  /* Signup Section */
+  .signup-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    padding: 40px 72px;
+    
+  }
+  
+  .signup-header {
+    text-align: center;
+
+    padding: 15px ;
+    font-family: var(--font-noto-sans);
+
+  }
+  
+  .signup-title {
+   
+    color: white;
+    font-family: Noto Sans;
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    text-underline-position: from-font;
+    margin-bottom: 20px;
+    text-decoration-skip-ink: none;
+
+  }
+  
+  .signup-description {
+    font-family: var(--font-noto-sans);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 19.07px;
+    text-align: center;
+    color: white;
+    
+  }
+  
+  .signup-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(232px, 1fr));
+  }
+  
+  /* FAQ Section */
+  .faq-section {
+    margin-top: 40px;
+    padding: 20px;
+  }
+  
+  .faq-header {
+    text-align: center;
+    padding: 15px ;
+    font-family: var(--font-noto-sans);
+    color: #361F31;
+
+  }
+  
+  .faq-title {
+    color: #361F31;
+    font-family: Noto Sans;
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    text-underline-position: from-font;
+    margin-bottom: 15px;
+    text-decoration-skip-ink: none;
+  }
+  
+  .faq-description {
+    font-family: var(--font-noto-sans);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 19.07px;
+    text-align: center;
+    color: #361F31; 
+  }
+  
+
+  @media (max-width: 596px) {
+
+    .signup-section{
+      padding: 45px 20px;
+    }
+    .features-grid {
+      grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); /* Single column */
+      gap: 16px; /* Reduce gap for smaller screens */
+    }
+    .hero-text{
+      margin-left: 35px;
+      margin-top: 50px;
+    }
+    .hero-title{
+      font-size: 24px;
+    }
+    .hero-description{
+      font-size: 12px;
+    }
+    .faq-title,.signup-title,.features-title,.pricing-title{
+      font-size: 24px;
+      min-height: 40px;
+      padding: 0px;
+      margin-bottom: 10px;
+    }
+    .features-header{
+      padding: 0px;
+      .section-title{
+        font-size: 24px;
+      }
+
+    }
+    .section-description{
+      padding: 0px;
+      min-height: 40px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      
+    }
+    .section-title{
+      margin-bottom: 10px;
+    }
+    .faq-header,.signup-header{
+      padding: 0px;
+      padding-bottom: 10px;
+    }
+    .faq-description,.signup-description,.section-description,.pricing-subtitle{
+      font-size: 12px;
+    }
+    
+  }
