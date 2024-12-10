@@ -8,6 +8,10 @@
     border-right:1px solid #2C2C2E80;
     height: fit-content;
 }
+.pricing-tile:last-child{
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
 
 .pricing-tile.recommended {
     position: relative; /* Stacking context for child absolute elements */
@@ -15,18 +19,22 @@
     z-index: 10; /* Ensure it stacks above other tiles */
     border:1px solid #2C2C2E80;
     border-left:none;
+    
 }
 
 .recommended-banner {
     
     position: absolute;
     top: -40px;
-    width: 100%;
+    width: calc(100% + 1px);
     height: 40px;
     padding: 10px;
     background-color: white;
     /* box-shadow: 0px 15px 30px 0px #3854F6; */
     z-index: 11; /* Explicitly higher than `.pricing-tile` */
+    border: 1px solid #2C2C2E80;
+    border-bottom: none;
+    left: -0.5px;
 }
 
 .recommended-banner .recommended-text {
@@ -43,13 +51,26 @@
 
   
   .pricing-tile-header {
-
+    position: relative;
     height: 140px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     border-bottom:1px solid #2C2C2E80;
+    .comming-soon-con{
+        position: absolute;
+        top:0;
+        right: 0;
+        height: 71px;
+        width: 71px;
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
   }
   
   .package-type {
@@ -68,11 +89,13 @@
     font-weight: 700;
     font-family: var(--font-noto-sans);
     color: #2c2c2e;
-    height: 90px;
+    min-height: 90px;
     border-bottom:1px solid #2C2C2E80;
     display: flex;
     justify-content: center;
     align-items:  center;
+    padding: 4px 8px;
+
     
   }
   
@@ -103,7 +126,7 @@
     justify-content: center;
     font-size: 14px;
     height: 65px;
-
+    padding: 4px 8px;
     flex-direction: column;
     text-align: center;
     border-bottom:1px solid #2C2C2E80;
@@ -137,6 +160,7 @@
     cursor: pointer;
     border: 1px solid #FF8343;
     width: 100%;
+    border-radius: 2px;
   }
   
   .buy-now-btn:hover {

@@ -1,14 +1,29 @@
-root{
-    --main-background-color--: #fff
-    --font-noto-sans: 'Noto Sans', sans-serif;   
-    --font-poppins : 'Poppins', sans-serif;
-    
+:root {
+    --primary-color: #630F7F;
+    --secondary-color: #2ecc71;
+    --label-text-color: rgba(102, 102, 102, 1);
+    --text-color: rgba(18, 18, 18, 1);
+    --input-bg-color: #F9FAFA;
+    --input-font-size: 14px;
+    --input-font-weight: 500;
+
+    --main-background-color: #fff;
+    --font-noto-sans: 'Noto Sans', sans-serif;
+    --font-poppins: 'Poppins', sans-serif;
+    --font-merriweather: 'Merriweather', serif;
+    --font-cantarell : "Cantarell", sans-serif;
+    --border-top-orange: #CA5D1880;
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Noto Sans', sans-serif;
     
+}
+a{
+    text-decoration: none;
+    color: inherit;
 }
 

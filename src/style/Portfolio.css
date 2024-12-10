@@ -1,14 +1,4 @@
-:root {
-    /* --primary-color: rgba(58, 117, 196, 1); */
-    --primary-color:  #630F7F;
-    --secondary-color: #2ecc71;
-    --label-text-color: rgba(102, 102, 102, 1);
-    --text-color: rgba(18, 18, 18, 1);
-    --input-bg-color: #F9FAFA;
-    --input-font-size: 14px;
-    --input-font-weight: 500;
-    --noto-sans-font: Noto Sans;
-  }
+
   
   .wrapper{
     width: 100%;
@@ -86,6 +76,7 @@
     align-items: center;
     gap: 25px;
     width: 100%;
+
 }
 .portfolio-form-step-1-container1 , 
 .portfolio-form-step-1-container2,
@@ -498,7 +489,7 @@
 .pagination-line {
   width: 40%; 
   height: 2px; 
-  background-color: rgba(44, 44, 46, 0.5);
+  background-color: var(--primary-color);
   align-self: center;   
 }
 
@@ -595,6 +586,7 @@
         left: 30px;
         top: 10px;
     }
+
 }
 
 .portfolio-form-step-2-container1,
@@ -1030,6 +1022,7 @@
 .signup-footer-text-login-portfolio{
   color: var(--primary-color);
 }
+
 /* Responsive Design */
 @media screen and (min-width: 1200px) {
   .get-form-responsive-width,
@@ -1041,12 +1034,18 @@
     .portfolio-form-step-1-container3,
     .portfolio-form-step-1-container4,
     .portfolio-form-step-2,
-    .button-container-portfolio,
-    .portfolio-form-step-container,
-    .portfolio-pagination
+    
+    .portfolio-form-step-container
+    
     {
         width: 95%;
-        max-width: 95%;
+        max-width: 70%;
+    }
+    .portfolio-pagination{
+        max-width: 90%;
+    }
+    .button-container-portfolio{
+        width: 80%;
     }
     
 }
@@ -1060,10 +1059,12 @@
     .portfolio-form-step-1-container3,
     .portfolio-form-step-1-container4,
     .portfolio-form-step-2,
-    .button-container-portfolio,
     .portfolio-form-step-container
      {
         width: 90%;
+    }
+    .button-container-portfolio{
+        width: 70%;
     }
 
     .portfolio-form-step-container-left,
@@ -1092,12 +1093,15 @@
     .portfolio-form-step-1-container2,
     .portfolio-form-step-1-container3,
     .portfolio-form-step-1-container4,
-    .button-container-portfolio,
+    
     .portfolio-form-step-container
     {
         width: 90%;
         flex-direction: column;
 
+    }
+    .button-container-portfolio{
+        width: 80%;
     }
     .portfolio-pagination{
       width: 90%;
@@ -1207,7 +1211,7 @@
 
     .portfolio-pagination {
         width: 100%;
-        font-size: 12px;
+        font-size: 10px;
         gap: 8px;
     }
 
@@ -1226,7 +1230,7 @@
     .portfolio-form-step-1-container3,
     .portfolio-form-step-1-container4,
     .portfolio-form-step-2,
-    .button-container-portfolio,
+    
     .portfolio-form-step-container
     {
         width: 95%;
@@ -1234,6 +1238,9 @@
     }
     .social-media-handle-button-container{
       width: 95%;
+    }
+    .button-container-portfolio{
+        width: 80%;
     }
     
     

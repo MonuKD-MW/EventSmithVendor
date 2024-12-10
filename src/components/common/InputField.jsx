@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import '../../style/InputField.css'
 
 const InputField = ({ label, type, name, value, onChange, required, readOnly=false,editable,isDisable=false }) => {
+    
     const isPassword = label.toLowerCase() === 'password' || label.toLowerCase() === 'confirm password';
     const [toggleDisabled,setToggleDisabled] = useState(isDisable);
     const [passwordToggle,setPasswordToggle] = useState(false);

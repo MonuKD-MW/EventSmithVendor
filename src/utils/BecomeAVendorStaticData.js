@@ -1,48 +1,64 @@
+import handShake from '../assets/become-vendor/sixMonthSignup/handShake.png'
+import bulb from '../assets/become-vendor/sixMonthSignup/bulb.png'
+import star from '../assets/become-vendor/sixMonthSignup/star.png'
+import toggles from '../assets/become-vendor/sixMonthSignup/toggles.png'
+import chart from '../assets/become-vendor/sixMonthSignup/chart.png'
+//features
+import brand from '../assets/become-vendor/bulb.png';
+import marketing_icon from '../assets/become-vendor/advertising.png';
+import analytics_icon from '../assets/become-vendor/analysis.png';
+import efficiency_icon from '../assets/become-vendor/hand.png';
+import competitive_edge_icon from '../assets/become-vendor/money.png';
+import budget_icon from '../assets/become-vendor/accounting.png';
+import revenue_icon from '../assets/become-vendor/sales.png';
+import spotlight_icon from '../assets/become-vendor/rocket.png';
+import personalization_icon from '../assets/become-vendor/star.png'
+
 export const features = [
     {
       "title": "Create Your Own Brand Image and Stand Out",
       "description": "Highlight your unique brand and services with customizable profile options.",
-      "icon": "brand_icon"
+      "icon": brand
     },
     {
       "title": "Our Marketing, Your Exposure",
       "description": "Powerful marketing campaigns that put you front and center! We drive traffic to your profile so you can focus on providing an exceptional service.",
-      "icon": "marketing_icon"
+      "icon": marketing_icon
     },
     {
       "title": "See who's looking at your profile with transparent user analytics",
       "description": "Understand your client traffic and activity so you can make data-driven decisions — no more guessing about what's working!",
-      "icon": "analytics_icon"
+      "icon": analytics_icon
     },
     {
       "title": "Easy, Efficient, and Ready to Use",
       "description": "Manage bookings, inquiries, and profile updates on a user-friendly platform that keeps you focused on your clients.",
-      "icon": "efficiency_icon"
+      "icon": efficiency_icon
     },
     {
       "title": "Gain the Edge Your Competitors Are Missing",
       "description": "Gain early access to insights, visibility features, and marketing tools designed to give you a head start — stand out from day one as others play catch-up.",
-      "icon": "competitive_edge_icon"
+      "icon": competitive_edge_icon
     },
     {
       "title": "Affordable Options That Work with Your Budget",
       "description": "Choose from flexible pricing packages with options to boost visibility and engagement without breaking the bank.",
-      "icon": "budget_icon"
+      "icon": budget_icon
     },
     {
       "title": "Transform website views into real sales and revenue",
       "description": "Secure more bookings and unlock new revenue opportunities!",
-      "icon": "revenue_icon"
+      "icon": revenue_icon
     },
     {
       "title": "Premium Spotlight Placement to Boost Visibility",
       "description": "Get noticed first by clients with premium visibility at the top of search results.",
-      "icon": "spotlight_icon"
+      "icon": spotlight_icon
     },
     {
       "title": "Create Personalized Packages That Perfectly Match Your Clients' Vision",
       "description": "Design flexible, bespoke options that meet the unique needs of every client",
-      "icon": "personalization_icon"
+      "icon": personalization_icon
     }
   ];
   console.log(JSON.stringify(features, null, 2));
@@ -142,6 +158,7 @@ export  const faqs = [
           prioritySupport: false,
         },
         recommended: false, // Not recommended
+        isCommingSoon: false
       },
       {
         name: "Insightful Growth",
@@ -164,6 +181,7 @@ export  const faqs = [
           prioritySupport: false,
         },
         recommended: true, // Recommended package
+        isCommingSoon: false
       },
       {
         name: "AI-Powered Branding",
@@ -186,36 +204,37 @@ export  const faqs = [
           prioritySupport: true,
         },
         recommended: false,
+        isCommingSoon: true
       },
     ],
   };
  export const benefits = [
     {
-      icon: 'Handshake',
+      icon: handShake,
       title: "Commitment to Results",
       description:
         "A 6-month commitment ensures you have enough time to see real results and fully explore the benefits of our platform.",
     },
     {
-      icon: 'RotateCcw',
+      icon: chart,
       title: "Improved Results and Analytics",
       description:
         "More time on the platform means we get more data to help you understand what's working, allowing you to adjust your business strategy and see even better results.",
     },
     {
-      icon: "Helmet",
+      icon: bulb,
       title: "Predictable Costs, Stable Service",
       description:
         "With a 6-month plan, we can continue offering you top-tier support, regular updates, and exclusive features, ensuring you get the most out of your subscription.",
     },
     {
-      icon: "ArrowDownToLine",
+      icon: toggles,
       title: "Time to Optimize Your Profile",
       description:
         "You'll have ample time to fine-tune your profile and make the most of all the tools available to you—ensuring your business gets the visibility it deserves.",
     },
     {
-      icon: "Star",
+      icon: star,
       title: "Better Long-Term Value",
       description:
         "The longer you stay, the more value you get! A 6-month sign-up ensures you get the full benefit of our platform's features and analytics. Simply put, it's a bang for your bucks!",

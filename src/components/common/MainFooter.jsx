@@ -5,7 +5,7 @@ import { FaSquareFacebook } from 'react-icons/fa6';
 import { AiOutlineInstagram } from 'react-icons/ai';
 import { FaTwitter } from 'react-icons/fa';
 import { BsLinkedin } from 'react-icons/bs';
-
+import logoWithoutName from '../../assets/logo-without-name.jpeg'
 import {Link} from 'react-router-dom';
 import '../../style/MainFooter.css'; // Import the CSS file
 
@@ -23,7 +23,7 @@ const MainFooter = () => {
             <div className="logo-container">
               <Link href="/">
                 <img
-                  src="/logo.png"
+                  src={logoWithoutName}
                   alt="Company Logo"
                   width={101}
                   height={101}
@@ -87,6 +87,7 @@ const MainFooter = () => {
         </div>
 
         {/* Copyright */}
+        <div className="footer-hr"/>
         <div className="footer-copyright">
           <p>© {currentYear} | All rights reserved</p>
         </div>

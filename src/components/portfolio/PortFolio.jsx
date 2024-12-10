@@ -5,7 +5,7 @@ import PortfolioFormStep2 from "./PortfolioFormStep2";
 import PortfolioFormStep3 from "./PortFolioFormStep3";
 import Pagination from "../common/Pagination";
 import usePortFolio from "../../utils/CustomHook/usePortFolio";
-
+import PricingPlans from '../common/PricingPlans'
 function Portfolio() {
   const {
     vendorData,
@@ -75,6 +75,9 @@ function Portfolio() {
         setLocalStateForStep={setLocalStateForStep}
         />
       )}
+      {
+        step == 4 && <PricingPlans/>
+      }
 
       {/* Portfolio footer */}
       <div className="button-container-portfolio">

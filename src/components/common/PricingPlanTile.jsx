@@ -1,14 +1,19 @@
 import React from 'react';
 import { FaCheck, FaTimes } from 'react-icons/fa'; // Icons for check and cross
 import '../../style/PricingPlanTile.css'; // Import the tile-specific CSS
-
-const PricingPlanTile = ({ data, isRecommended }) => {
+import commingSoonGif from '../../assets/commingSoon.gif';
+const PricingPlanTile = ({ data, isRecommended ,isCommingSoon}) => {
   const { type, name, description, monthlyPrice, sixMonthPrice, features } = data;
 
   return (
     <div className={`pricing-tile ${isRecommended ? 'recommended' : ''}`}>
       {isRecommended && <div className="recommended-banner"><span className='recommended-text'>RECOMMENDED</span></div>}
       <div className="pricing-tile-header">
+        {isCommingSoon && (
+          <div className="comming-soon-con ">
+            <img src={commingSoonGif} alt="comming soon gif" />
+          </div>
+        )}
         <h3 className="package-type">{type}</h3>
         <h2 className="package-name">{name}</h2>
       </div>
@@ -28,7 +33,12 @@ const PricingPlanTile = ({ data, isRecommended }) => {
         {Object.entries(features).map(([feature, value], idx) => (
             <li key={idx} className={`feature-item ${value ? 'enabled' : 'disabled'}`}>
                 {typeof value === 'boolean' ? (
-                value ? <FaCheck className="icon" /> : <FaTimes className="icon" />
+                value ? 
+                // <FaCheck className="icon" /> 
+                "✔"
+                : 
+                // <FaTimes className="icon" />
+                "-"
                 ) : typeof value === 'string' && value.toLowerCase().includes('images') && data.name !== 'Personal Branding' ? (
                 <>
                     {value} <br />

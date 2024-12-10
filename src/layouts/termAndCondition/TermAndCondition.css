@@ -1,0 +1,102 @@
+.term-and-condition-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.page-address{
+    font-size: 14px;
+    font-weight: 500;
+    font-family: var(--font-noto-sans);
+    color: #2C2C2EB2;
+    padding: 32px 16px;
+    padding-bottom: 8px;
+}
+
+.term-and-condition-main {
+    flex-grow: 1;
+    border-top: 2px solid var(--border-top-orange);
+}
+
+.term-and-condition-section {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 32px 16px; /* 2rem 1rem */
+}
+
+.term-and-condition-content {
+    font-family: 'Noto Sans', sans-serif;
+    line-height: 1.6;
+    margin-bottom: 32px; /* 2rem */
+}
+
+.term-and-condition-title {
+    font-size: 24px; /* 2.25rem */
+    
+    margin-bottom: 24px; /* 1.5rem */
+    font-family: var(--font-merriweather);
+        font-weight: 700;
+}
+
+.term-and-condition-subtitle {
+    font-size: 20px; /* 1.25rem */
+    font-family: var(--font-merriweather);
+        font-weight: 700;
+    margin-bottom: 16px; /* 1rem */
+}
+
+.term-and-condition-paragraph {
+    font-size: 14px; /* 1rem */
+    font-weight: 400;
+    font-family: var(--font-poppins);
+    margin-bottom: 24px; /* 1.5rem */
+    line-height: 30px;
+}
+
+/* Media Queries */
+@media (min-width: 640px) {
+    .term-and-condition-section,.page-address {
+        padding: 48px 24px; /* 3rem 1.5rem */
+    }
+    .page-address{
+        padding-bottom: 8px;
+    }
+    .term-and-condition-title {
+        font-size: 26px; /* 3rem */
+        font-family: var(--font-merriweather);
+        font-weight: 700;
+    }
+    .term-and-condition-subtitle {
+        font-size: 20px; /* 1.5rem */
+        font-family: var(--font-merriweather);
+        font-weight: 700;
+    }
+    .term-and-condition-paragraph {
+        font-size: 14px; /* 1.125rem */
+        line-height: 30px;
+    }
+}
+
+@media (min-width: 768px) {
+    .term-and-condition-title {
+        font-size: 32px; /* 3.75rem */
+        font-family: var(--font-merriweather);
+        font-weight: 700;
+        
+    }
+    .term-and-condition-subtitle {
+        font-size: 18px; /* 1.875rem */
+        font-family: var(--font-merriweather);
+        font-weight: 700;
+    }
+}
+
+@media (min-width: 1024px) {
+    .term-and-condition-section,.page-address {
+        padding: 32px 72px; /* 4rem 2rem */
+    }
+    .page-address{
+        padding-bottom: 8px;
+    }
+}
+
+  

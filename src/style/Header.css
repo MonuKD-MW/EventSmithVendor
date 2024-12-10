@@ -46,10 +46,23 @@
     border: none;
     outline:none;
   }
+  #desktop-vendor-button{
+    border: 1px solid #2C2C2E00;
+    outline: none;
+    padding: 8px 10px;
+    border-radius: 2px;
+    font-family: var(--font-nato-sans);
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #667062;
+    color: #fff;
+  }
   
   .login-button {
     background-color: #F05A28;
     color: white;
+    border-radius: 2px;
+    height: 37px;
   }
   
   .login-button:hover {
@@ -71,6 +84,7 @@
     align-items: center;
     padding: 0 30px;
     min-height: 172px;
+    margin-bottom: 16px;
   }
   
   .logo-container {
@@ -103,11 +117,14 @@
     color: rgba(200, 149, 66, 1);
     font-weight: 700;
     text-align: center;
+    font-family: "Cantarell", sans-serif ;
   }
+  
   
   .header-text-color {
     padding: 0 4px;
     color: var(--header-text-color);
+    font-family: var(--font-cantarell);
   }
   
   .navigation {
@@ -205,12 +222,14 @@
   }
   .for-become-vendor-top-bar{
     position: absolute;
-    right: 7px;
+    right: 40px;
     top:50%;
     transform: translateY(-50%);
     
   }
-  
+  .become-vendor-header-text-color{
+    font-family: var(--font-cantarell);
+  }
 
   @media (max-width: 950px) {
     .menu-button {
@@ -271,6 +290,7 @@
       outline: none;
       border: none;
     }
+    
   
     .mobile-login-button {
       background-color: #F05A28;
@@ -292,6 +312,10 @@
 
     .for-become-vendor-top-bar{
       top: 10%;
+    }
+    .for-become-vendor-top-bar-mobile{
+      top: 14%;
+      right: 4px !important;
     }
     .become-vendor-mobile-login-btn{
       background-color: #630F7F;

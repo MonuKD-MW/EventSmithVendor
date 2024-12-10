@@ -94,6 +94,8 @@
 .loginOptions {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  
 }
 
 .loginOptions a {
@@ -136,5 +138,10 @@
   
   .loginFormWrapper {
     max-width: 100%;
+  }
+}
+@media (max-width: 1200px) {
+  .loginFormWrapper h2 {
+    font-size: 26px;
   }
 }

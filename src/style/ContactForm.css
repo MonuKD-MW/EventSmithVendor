@@ -1,0 +1,120 @@
+/* Container */
+.contact-form-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Info Section */
+.contact-form-info {
+    flex: 1;
+    background-color: #f3f4f6;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact-info-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.contact-info-details {
+    margin-bottom: 20px;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.contact-info-icon {
+    font-size: 18px;
+}
+
+.contact-info-socials {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.social-icon:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Contact Form Section */
+.contact-form-fields {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 10px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+textarea {
+    resize: none;
+}
+
+.submit-button {
+    background-color: #6b46c1;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #553c9a;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .contact-form-container {
+        flex-wrap: nowrap;
+    }
+
+    .contact-form-info {
+        flex: 1;
+    }
+
+    .contact-form-fields {
+        flex: 1.5;
+    }
+}

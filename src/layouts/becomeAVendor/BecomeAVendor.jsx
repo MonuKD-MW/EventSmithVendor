@@ -12,6 +12,7 @@ import './BecomeAVendor.css';
 import PricingPlans from "../../components/common/PricingPlans";
 
 
+
 import becomeVendor from '../../assets/becomeAVendor.jpeg'; // Adjust the image path as necessary
 
 // Assuming features, benefits, faqs, and pricingData are imported or defined earlier
@@ -23,16 +24,16 @@ export default function BecomeAVendor() {
       <main className={"main-content"}>
         {/* Hero Section */}
         <section
-          className="hero-section"
+          className="become-vendor-hero-section"
           style={{ backgroundImage: `url(${becomeVendorHeroImg})` }}
         >
           <div className="container">
             <div className="grid">
-              <div className="hero-text">
-                <h1 className="hero-title">
+              <div className="become-vendor-hero-text">
+                <h1 className="become-vendor-hero-title">
                   Be part of a technology-edge marketplace
                 </h1>
-                <p className="hero-description">
+                <p className="become-vendor-hero-description">
                 Want to run your business with data-driven numbers to build an analytical strategy?
                 </p>
                 <button className="btn-proceed">Proceed</button>
@@ -54,7 +55,7 @@ export default function BecomeAVendor() {
             </div>
             <div className="features-grid">
               {features.map((feature, i) => (
-                <Card key={i} title={feature.title} desc={feature.description} />
+                <Card key={i} title={feature.title} desc={feature.description} icon={feature.icon}/>
               ))}
             </div>
           </div>

@@ -15,15 +15,12 @@ import BecomeAVendor from "../../layouts/becomeAVendor/BecomeAVendor";
 const Header = ({forBecomeVendor=false}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   console.log(forBecomeVendor)
-//   const router = useRouter();
-  const navigate = () => { 
-    router.push('/login');
-  };
+
 
   return (
     <header className={`main-header ${forBecomeVendor && "header-white-bg"}`}>
       {/* Top bar */}
-      <div className={`top-bar ${forBecomeVendor && "for-become-vendor-top-bar"}`}>
+      <div className={`top-bar ${forBecomeVendor && "for-become-vendor-top-bar for-become-vendor-top-bar-mobile"}`}>
         <div className="menu-button">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-menu-color">
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -34,16 +31,20 @@ const Header = ({forBecomeVendor=false}) => {
             {/* <LocationSelector /> */}
            {!forBecomeVendor && <span className="hardcoded-location">Toronto, ON</span>}
           </div>
-          <button className={forBecomeVendor ? "for-become-vendor-login-button" : "login-button" }  onClick={navigate}>
-            Login
-          </button>
+          <Link to={'/'}>
+            <button className={forBecomeVendor ? "for-become-vendor-login-button" : "login-button" }>
+              Login
+            </button>
+          </Link>
           {forBecomeVendor ? (
             <button className="signup-button">
               <Link to="/signup" className="mobile-login-link">Sign Up</Link>
             </button>
           ) : (
-            <Link to="/becomevendor" className="mobile-vendor-button">
-              Become a Vendor
+            <Link to="/becomevendor" >
+              <button type="button" id="desktop-vendor-button">
+                 Become a Vendor
+              </button>
             </Link>
           )}
         </div>
@@ -63,7 +64,7 @@ const Header = ({forBecomeVendor=false}) => {
         </div>
         {/* Center content */}
         <div className="center-content">
-          <h1 className="header-title">
+          <h1 id="header-title-id" className="header-title">
           {forBecomeVendor ? (
             /* Render content for Become Vendor */
             <div>
@@ -100,13 +101,17 @@ const Header = ({forBecomeVendor=false}) => {
           <div className="mobile-menu-content">
             {/* <LocationSelector /> */}
             {!forBecomeVendor && <span className="hardcoded-location">Toronto, ON</span>}
+            <Link to={'/'}>
             <button className={`mobile-login-button ${BecomeAVendor && "become-vendor-mobile-login-btn"}`}>
               Login
             </button>
+            </Link>
             {forBecomeVendor ? (
+               <Link to={"/signup"} className="mobile-login-link">
               <button className="mobile-login-button become-vendor-mobile-login-btn">
-                <Link to="/signup" className="mobile-login-link">Sign Up</Link>
+               Sign Up
               </button>
+              </Link>
             ) : (
               <Link to="/becomevendor" className="mobile-vendor-button">
                 Become a Vendor

@@ -1,0 +1,51 @@
+/* Contact Section */
+.contact-container {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.contact-section {
+    width: 100%;
+    border-top: 2px solid #ff7f00; /* Replace customOrange */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.contact-header {
+    text-align: center;
+    margin: 20px 0;
+    padding: 20px 16px;
+}
+
+.contact-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.contact-description {
+    color: #606060;
+    font-size: 14px;
+}
+
+/* Wrapper for Contact Form */
+.contact-form-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 0 32px;
+}
+
+/* Media Queries */
+@media screen and (min-width: 768px) {
+    .contact-title {
+        font-size: 32px;
+    }
+
+    .contact-description {
+        font-size: 16px;
+    }
+}

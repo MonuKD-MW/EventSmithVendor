@@ -7,7 +7,7 @@
   }
   
   /* Hero Section */
-  .hero-section {
+  .become-vendor-hero-section {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -15,7 +15,7 @@
     padding: 16px;
   }
   
-  .hero-text {
+  .become-vendor-hero-text {
     max-width: 600px;
     display: flex;
     flex-direction: column;
@@ -26,7 +26,7 @@
     margin-left: 72px;
   }
   
-  .hero-title {
+  .become-vendor-hero-title {
     font-size: 48px;
     font-weight: 500;
     letter-spacing: -0.015em;
@@ -34,7 +34,7 @@
     color: white;
   }
   
-  .hero-description {
+  .become-vendor-hero-description {
     color: #E5E5E5;
     font-size: 16px;
     text-align: left;
@@ -42,7 +42,7 @@
   }
   
   .btn-proceed {
-    background-color: #F79C42;
+    background-color: #FF8343;
     font-family: var(--font-noto-sans);
     font-weight: 600;
     font-size: 18px;
@@ -72,7 +72,7 @@
   .features-header {
     text-align: center;
 
-    padding: 40px 72px 8px 72px;
+
     .section-title {
       font-size: 32px;
       font-weight: 600;
@@ -119,12 +119,15 @@
   
   .pricing-header {
     text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   
   .pricing-title {
     font-size: 32px;
     font-weight: 600;
     color: #361F31;
+    margin-bottom: 20px;
   }
   
   .pricing-subtitle {
@@ -216,7 +219,13 @@
     color: #361F31; 
   }
   
-
+  @media (min-width: 1700px) {
+    .features-grid{
+      max-width: 1800px;
+      margin: 0 auto;
+    }
+    
+  }
   @media (max-width: 596px) {
 
     .signup-section{
@@ -226,14 +235,14 @@
       grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); /* Single column */
       gap: 16px; /* Reduce gap for smaller screens */
     }
-    .hero-text{
+    .become-vendor-hero-text{
       margin-left: 35px;
       margin-top: 50px;
     }
-    .hero-title{
+    .become-vendor-hero-title{
       font-size: 24px;
     }
-    .hero-description{
+    .become-vendor-hero-description{
       font-size: 12px;
     }
     .faq-title,.signup-title,.features-title,.pricing-title{

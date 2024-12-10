@@ -4,6 +4,7 @@ import SignupStep2 from './Signup-step2';
 import SignupStep1 from './Signup-step1';
 import useSignup from '../../utils/CustomHook/useSignup'; // Import the custom hook
 import StepButton from '../common/StepButton';
+import {Link} from 'react-router-dom'
 function Signup() {
 // Use the hook here
 const 
@@ -22,7 +23,7 @@ const
     <div className='signup-container'>
       {/* Step Titles and Pagination */}
       <div className='signup-title-container'>
-        <h4 className='signup-title'>{step===1 ? "Let's get started" : "Almost there!"}</h4>
+        <h4 className='signup-title-form'>{step===1 ? "Let's get started" : "Almost there!"}</h4>
         <h3 className='signup-title-2'>Create your account</h3>
       </div>
 
@@ -76,11 +77,13 @@ setStep={setStep}
 
       <div className='signup-footer'>
         <div className='signup-footer-text'>
-          Already A Member? <span className='signup-footer-text-login'>Login</span>
+          Already A Member? <span className='signup-footer-text-login'><Link to={'/'}>Login</Link></span>
         </div>
 
         <div className="vendor-login-container">
-          <div className="vendor-login-text">Vendor Login</div>
+          <Link to={'/portfolio'}>
+            <div className="vendor-login-text">Vendor Login</div>
+          </Link>
         </div>
       </div>
     </div>
