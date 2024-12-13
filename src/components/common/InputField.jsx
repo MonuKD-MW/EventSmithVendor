@@ -3,7 +3,7 @@ import { RiPencilLine } from "react-icons/ri";
 import { useState, useRef } from "react";
 import '../../style/InputField.css'
 
-const InputField = ({ label, type, name, value, onChange, required, readOnly=false,editable,isDisable=false }) => {
+const InputField = ({ label, type, name, value, onChange, required, readOnly=false,editable,isDisable=false, onBlur, errors }) => {
     
     const isPassword = label.toLowerCase() === 'password' || label.toLowerCase() === 'confirm password';
     const [toggleDisabled,setToggleDisabled] = useState(isDisable);
@@ -34,6 +34,8 @@ const InputField = ({ label, type, name, value, onChange, required, readOnly=fal
                     required={required}
                     readOnly={readOnly}
                     disabled={toggleDisabled}
+                    onBlur={onBlur} // Validate on blur
+                    className={errors?.[name] && 'having-error'}
                 />
                 {isPassword && (
                     <span className="common-password-icon" onClick={() => setPasswordToggle(!passwordToggle)}>
@@ -43,6 +45,7 @@ const InputField = ({ label, type, name, value, onChange, required, readOnly=fal
                 {editable && (
                     <span className="common-pencil-icon" onClick={handlePencilClick}><RiPencilLine/></span>
                 )}
+                {errors?.[name] && <span className="custom-form-error-identifier">{errors[name].includes('required') ? `${name} is Required` : errors[name]}</span>}
             </div>
         </div>
     );

@@ -22,30 +22,42 @@
 }
 
 .contact-title {
-    font-size: 24px;
+    font-size: 32px;
+    font-weight: 700;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .contact-description {
-    color: #606060;
-    font-size: 14px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
 }
 
-/* Wrapper for Contact Form */
+/* Ensure Parent Wrapper Centers the Child */
 .contact-form-wrapper {
+    width: 100%; /* Full width of the parent */
+    max-width: 100%; /* Prevent unintentional shrinking */
     display: flex;
-    justify-content: center;
-    padding: 0 32px;
+    justify-content: center; /* Center child horizontally */
+    padding: 9px 58px;
 }
 
 /* Media Queries */
-@media screen and (min-width: 768px) {
-    .contact-title {
-        font-size: 32px;
-    }
 
-    .contact-description {
-        font-size: 16px;
+/* Styles for devices between 1024px and 1366px */
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .contact-form-wrapper {
+        padding: 9px 48px; /* Adjust padding for mid-sized screens */
     }
 }
+
+/* Styles for devices smaller than 768px */
+@media (max-width: 768px) {
+    .contact-form-wrapper {
+        padding: 9px 25px; /* Narrower padding for smaller screens */
+    }
+}
+
+/* Styles for devices 768px and larger */
+

@@ -14,7 +14,8 @@ const
   handleNext,
   handleSubmit,
   getStepClass,
-  error
+  errors,
+  handleValidation
 }=useSignup()
 
   const stepNames = ['Personal Information', 'Verification'];
@@ -40,7 +41,7 @@ const
 
       {/* Step 1 */}
       {step === 1 && (
-        <SignupStep1/>
+        <SignupStep1 handleValidation={handleValidation} errors={errors}/>
       )}
 
       {/* Step 2 */}

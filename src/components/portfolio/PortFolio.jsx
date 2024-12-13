@@ -25,6 +25,8 @@ function Portfolio() {
     handleLocalStateForStep,
     localStateForStep,
     setLocalStateForStep,
+    errors,
+    handleValidation
   } = usePortFolio();
 
   return (
@@ -47,6 +49,8 @@ function Portfolio() {
           phoneVerified={phoneVerified}
           handleLocalStateForStep={handleLocalStateForStep}
           localStateForStep={localStateForStep}
+          errors={errors}
+          handleValidation={handleValidation}
         />
       )}
 
@@ -66,6 +70,8 @@ function Portfolio() {
         multiple={true}
         handleLocalStateForStep={handleLocalStateForStep}
         localStateForStep={localStateForStep}
+        errors={errors}
+        handleValidation={handleValidation}
         />
       )}
       {step === 3 && (
@@ -73,6 +79,8 @@ function Portfolio() {
         handleLocalStateForStep={handleLocalStateForStep}
         localStateForStep={localStateForStep}
         setLocalStateForStep={setLocalStateForStep}
+        errors={errors}
+        handleValidation={handleValidation}
         />
       )}
       {

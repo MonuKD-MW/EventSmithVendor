@@ -2,13 +2,22 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateVendorData } from '../../redux/features/vendorDataSlice';
 import { ServiceData } from '../../staticData.json';
-
+import validateField from '../regex/validateField';
 const usePortFolio = () => {
 	const dispatch = useDispatch();
 	const vendorData = useSelector((state) => state.vendorData);
 	const [step, setStep] = useState(1);
 	const [imagePreview, setImagePreview] = useState(null);
+	const [errors, setErrors] = useState({});
 
+	const handleValidation = (label, value) => {
+		const error = validateField(label, value);
+		console.log('[Error]',errors)
+		setErrors(prevErrors => ({
+		  ...prevErrors,
+		  [label]: error
+		}));
+	  };
 	//myCode here To handle data Persistence
 	console.log("[vendorData]",vendorData)
 	const [localStateForStep,setLocalStateForStep] = useState({...vendorData});
@@ -196,6 +205,8 @@ const usePortFolio = () => {
 		handleLocalStateForStep,
 		localStateForStep,
 		setLocalStateForStep,
+		errors,
+		handleValidation
 	
 	};
 };

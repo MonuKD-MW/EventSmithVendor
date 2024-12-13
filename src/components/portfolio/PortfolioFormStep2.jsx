@@ -28,6 +28,8 @@ const PortfolioFormStep2 = ({
   regions,
   ServiceData,
   handleLocalStateForStep,
+  errors,
+  handleValidation
 }) => {
 
   const getSubCategories = (service) => {
@@ -112,6 +114,8 @@ const PortfolioFormStep2 = ({
             value={businessName || ""}
             name="businessName"
             onChange={(e) => handleLocalStateForStep(e)}
+            onBlur={(e)=>handleValidation("businessName",e.target.value)}
+            errors={errors}
           />
         </div>
       </div>
@@ -153,6 +157,8 @@ const PortfolioFormStep2 = ({
           value={streetAddress1 || ""}
           name="streetAddress1"
           onChange={(e) => handleLocalStateForStep(e)}
+          onBlur={(e)=>handleValidation("streetAddress1",e.target.value)}
+          errors={errors}
         />
         
         <InputField
@@ -160,6 +166,7 @@ const PortfolioFormStep2 = ({
           value={streetAddress2 || ""}
           name="streetAddress2"
           onChange={(e) => handleLocalStateForStep(e)}
+          
         />
         </div>
       </div>
@@ -185,6 +192,8 @@ const PortfolioFormStep2 = ({
           value={postalCode || ""}
           name="postalCode"
           onChange={(e) => handleLocalStateForStep(e)}
+          onBlur={(e)=>handleValidation("postalCode",e.target.value)}
+          errors={errors}
           />
         </div>
       </div>

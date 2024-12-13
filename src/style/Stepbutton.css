@@ -16,8 +16,6 @@
         span{
             position: relative;
             top: 2px;
-
-           
         }
     }
 }
@@ -48,7 +46,7 @@
     
     
     .signup-next-button,
-    .submit-button {
+    .signup-submit-button {
         width: 49%;
         height: 51px;
         border: none;
@@ -64,12 +62,12 @@
     }
     
     .signup-next-button:hover,
-    .submit-button:hover {
+    .signup-submit-button:hover {
         background-color: rgba(230, 115, 18, 1); 
     }
     
     .signup-next-button::after,
-    .submit-button::after {
+    .signup-submit-button::after {
         font-size: 36px;
         text-align: center;
         display: flex;  
@@ -82,7 +80,7 @@
     }
     
     @media  screen and (max-width:370px) {
-        .submit-button{
+        .signup-submit-button{
             font-size: 14px;
         }
     }

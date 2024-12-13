@@ -17,7 +17,30 @@
         flex-direction: column;
         align-items: center;
 
-        
+        .custom-form-error-identifier{
+          position:absolute;
+          top: 69px;
+          right:auto;
+          left: 20px;
+          color: red;
+          font-family: ;
+          font-size: 12px;
+
+          font-style: italic;
+          opacity: 0.9;
+        }
+
+      }
+      .custom-form-error-identifier{
+        position:absolute;
+        top: 69px !important;
+        right:auto !important;
+        left: 20px !important;
+        color: red;
+        font-family: var(--font-nato-sans);
+        font-size: 12px !important;
+        font-style: italic;
+        opacity: 0.9 !important;
       }
       
       .common-input-field input {
@@ -33,8 +56,11 @@
           border: none;
           
           font-family: Noto Sans;
-      
+          
         transition: border-color 0.2s;
+      }
+      .common-input-field input.having-error{
+        outline: 2px solid rgba(255,0,0, 0.75) !important;
       }
       
       .common-input-field input:focus {

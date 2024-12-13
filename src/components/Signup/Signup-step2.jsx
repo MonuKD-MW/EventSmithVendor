@@ -1,5 +1,3 @@
-import { IoMdEyeOff } from "react-icons/io";
-import { RiPencilLine } from "react-icons/ri";
 import InputField from "../common/InputField";
 import useSignUp from '../../utils/CustomHook/useSignup'; 
 
@@ -8,16 +6,9 @@ const SignupStep2 = () => {
   const {
     vendorData,
     handleInputChange,
-    error,
-    editPhone,
-    setEditPhone,
-    editEmail,
-    setEditEmail,
+    errors,
     handleResendOTP,
-    passwordToggle,
-    setPasswordToggle,
-    confirmPasswordToggle,
-    setConfirmPasswordToggle,
+    handleValidation
   } = useSignUp(); 
 
   console.log(vendorData)
@@ -40,10 +31,9 @@ const SignupStep2 = () => {
                 onChange={(e) => handleInputChange(e)}
                 isDisable={true}
                 readOnly={true}
+
               />
-              {error.phoneAreaCode && (
-                <span className="error-message">{error.phoneAreaCode}</span>
-              )}
+              
             </div>
 
             <div className="signup-step3-upper-field-phone phone-field">
@@ -55,6 +45,8 @@ const SignupStep2 = () => {
                 value={vendorData.phone}
                 readOnly={false}
                 onChange={(e) => handleInputChange(e)}
+                onBlur={(e) => handleValidation("phone", e.target.value)}
+                errors={errors}
                 isDisable={true}
                 editable={true}
               />
@@ -71,6 +63,8 @@ const SignupStep2 = () => {
               // readOnly={!editEmail}
               readOnly={false}
               onChange={(e) => handleInputChange(e)}
+              onBlur={(e) => handleValidation("emailId", e.target.value)}
+              errors={errors}
               isDisable={true}
               editable={true}
             />
@@ -89,9 +83,9 @@ const SignupStep2 = () => {
               onChange={(e) => handleInputChange(e)}
               required
             />
-            {error.otpPhone && (
+            {/* {error.otpPhone && (
               <span className="error-message">{error.otpPhone}</span>
-            )}
+            )} */}
             <span
               className="resend-otp"
               onClick={() => handleResendOTP("phone")}
@@ -110,9 +104,9 @@ const SignupStep2 = () => {
               onChange={(e) => handleInputChange(e)}
               required
             />
-            {error.otpEmail && (
+            {/* {error.otpEmail && (
               <span className="error-message">{error.otpEmail}</span>
-            )}
+            )} */}
             <span
               className="resend-otp"
               onClick={() => handleResendOTP("email")}
@@ -129,14 +123,13 @@ const SignupStep2 = () => {
           <div className="signup-step3-lower-field">
             <InputField
               label="Password"
-              type={passwordToggle ? "text" : "password"}
               id="password"
               name="password"
               value={vendorData.password || ''}
               onChange={(e) => handleInputChange(e)}
+              onBlur={(e) => handleValidation("password", e.target.value)}
+              errors={errors}
               required
-              passwordToggle={passwordToggle}
-              setPasswordToggle={setPasswordToggle}
             />
       
           </div>
@@ -146,11 +139,12 @@ const SignupStep2 = () => {
           <div className="signup-step3-lower-field">
             <InputField
               label="Confirm Password"
-              type={confirmPasswordToggle ? "text" : "password"}
               id="confirmPassword"
               name="confirmPassword"
               value={vendorData.confirmPassword}
               onChange={(e) => handleInputChange(e)}
+              onBlur={(e) => handleValidation("confirmPassword", e.target.value)}
+              errors={errors}
               required
             />
           </div>

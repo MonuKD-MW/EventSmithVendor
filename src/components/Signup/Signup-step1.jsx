@@ -2,18 +2,16 @@ import { RiArrowDownSLine } from "react-icons/ri";
 import InputField from "../common/InputField";
 import fb from "../../assets/fb.png"; 
 import google from "../../assets/google.png";
-import { useForm } from 'react-hook-form';
 import useSignup from '../../utils/CustomHook/useSignup';
 import { useState } from 'react';
 import CustomSelect from "../common/CustomSelect"
 
-const SignupStep1 = () => {
-  const {  formState: { errors } } = useForm();
+
+const SignupStep1 = ({handleValidation,errors}) => {
   const { vendorData, handleInputChange } = useSignup();
   const [localVendorData, setLocalVendorData] = useState(vendorData);
-
   console.log(localVendorData)
-
+  console.log(errors)
   const handleLocalInputChange = (e) => {
     const { name, value } = e.target;
     console.log("step1", name, value);
@@ -53,9 +51,11 @@ const SignupStep1 = () => {
               name="firstName"
               value={localVendorData?.firstName || ''}
               onChange={handleLocalInputChange}
+              onBlur={(e) => handleValidation("firstName", e.target.value)}
+              errors={errors}
               required
-              error={errors.firstName}
             />
+            
           </div>
 
           <div className="signup-step1-upper-right">
@@ -66,9 +66,11 @@ const SignupStep1 = () => {
               name="lastName"
               value={localVendorData?.lastName || ''}
               onChange={handleLocalInputChange}
+              onBlur={(e) => handleValidation("lastName", e.target.value)}
+              errors={errors}
               required
-              error={errors.lastName}
             />
+            
           </div>
         </div>
 
@@ -81,10 +83,11 @@ const SignupStep1 = () => {
               name="emailId"
               value={localVendorData?.emailId || ''}
               onChange={handleLocalInputChange}
+              onBlur={(e) => handleValidation("emailId", e.target.value)}
+              errors={errors}
               required
-              
-              error={errors.email}
             />
+            
           </div>
 
           <div className="signup-step1-lower-right">
@@ -101,17 +104,20 @@ const SignupStep1 = () => {
               </span>
             
             </div>
-
-            <InputField
-              label="Phone No"
-              type="text"
-              id="phone"
-              name="phone"
-              value={localVendorData?.phone  || ''}
-              onChange={handleLocalInputChange}
-              required={true}
-              error={errors.phone}
-            />
+            
+              <InputField
+                label="Phone No"
+                type="text"
+                id="phone"
+                name="phone"
+                value={localVendorData?.phone  || ''}
+                onChange={handleLocalInputChange}
+                onBlur={(e) => handleValidation("phone", e.target.value)}
+                required={true}
+                errors={errors}
+              />
+              
+            
           </div>
         </div>
     </div>

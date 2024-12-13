@@ -3,7 +3,7 @@ import { RiArrowDownSLine } from 'react-icons/ri';
 import {regions} from "../../staticData.json"
 import CustomSelect from '../common/CustomSelect';
 
-const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email},handleLocalStateForStep,localStateForStep}) => {
+const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email},handleLocalStateForStep,localStateForStep,errors,handleValidation}) => {
 
   console.log("[localStateForStep]",localStateForStep)
 
@@ -22,6 +22,8 @@ const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email},handleLocalSt
             isDisable={true}
             editable={true}
             onChange={(e) => handleLocalStateForStep(e)}
+            onBlur={(e)=>handleValidation("firstName",e.target.value)}
+            errors={errors}
           />
         </div>
         <div className="portfolio-form-step-container-right">
@@ -34,6 +36,8 @@ const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email},handleLocalSt
             isDisable={true}
             editable={true}
             onChange={(e) => handleLocalStateForStep(e)}
+            onBlur={(e)=>handleValidation("lastName",e.target.value)}
+            errors={errors}
           />
         </div>
       </div>
@@ -49,6 +53,8 @@ const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email},handleLocalSt
             editable={true}
             isDisable={true}
             onChange={(e) => handleLocalStateForStep(e)}
+            onBlur={(e)=>handleValidation("email",e.target.value)}
+            errors={errors}
           />
         </div>
         <div className="portfolio-form-step-container-right">
@@ -89,6 +95,8 @@ const PortfolioFormStep1 = ({vendorData:{firstName,lastName,email},handleLocalSt
             name="postalCode"
             value={localStateForStep.postalCode || ""}
             onChange={(e) => handleLocalStateForStep(e)}
+            onBlur={(e)=>handleValidation("postalCode",e.target.value)}
+            errors={errors}
           />
         </div>
       </div>

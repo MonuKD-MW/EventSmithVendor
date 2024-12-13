@@ -366,6 +366,8 @@
     left: 0%;
     right: 0px;
     text-align: end;
+    width: fit-content;
+    margin-left: auto;
   }
 
 }
@@ -664,6 +666,7 @@
   }
   .signup-title-container {
     margin-bottom: 3%;
+    width: 100%;
   }
 }
 

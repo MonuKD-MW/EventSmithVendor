@@ -1,3 +1,4 @@
+import { CodeSquare } from "lucide-react";
 
 export const validateEmail = (email) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -18,7 +19,7 @@ export const validateEmail = (email) => {
     return regex.test(password);
   };
   
-  export const validateStep1 = (vendorData,setError) => {
+  export const validateStep1 = (vendorData) => {
     
     const newErrors = {};
     if (!vendorData.firstName.trim()) newErrors.firstName = "First name is required.";
@@ -30,14 +31,17 @@ export const validateEmail = (email) => {
     if (!validateEmail(vendorData.emailId)) newErrors.emailId = "Invalid email format.";
     if (!validatePhoneNumber(vendorData.phone)) newErrors.phone = "Invalid phone is this  number format.";
    
-    setError(newErrors);
+    console.log(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
-  export const validateStep2 = (vendorData,setError) => {
+  export const validateStep2 = (vendorData) => {
     const newErrors = {};
+    
+    if (!validateEmail(vendorData.emailId)) newErrors.emailId = "Invalid email format.";
+    if (!validatePhoneNumber(vendorData.phone)) newErrors.phone = "Invalid phone is this  number format.";
     if (!validatePassword(vendorData.password)) newErrors.password = "Invalid password format.";
     if (vendorData.password !== vendorData.confirmPassword) newErrors.confirmPassword = "Passwords do not match.";
-    setError(newErrors);
+    console.log(newErrors)
     return Object.keys(newErrors).length === 0;
   };
