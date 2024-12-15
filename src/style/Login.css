@@ -17,7 +17,6 @@
 
 .loginFormWrapper {
   width: 100%;
-  padding: 0px 10%;
   /* width: 482px;
   height: 389px; */
 }
@@ -43,6 +42,8 @@
 .loginFormContainer {
   display: flex;
   flex-direction: column;
+  max-width:500px;
+  margin: 0 auto;
   gap: 1.5rem;
 }
 
@@ -94,7 +95,9 @@
 .loginOptions {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  p{
+    width:fit-content;
+  }
   
 }
 
@@ -123,7 +126,22 @@
   }
 }
 /* Responsive Design */
+
+@media (max-width: 1024px){
+  .loginOptions{
+    p,a{
+      font-size:14px;
+    }
+
+  }
+}
+
 @media (max-width: 768px) {
+
+  .loginFormWrapper h2{
+    font-size:24px !important;
+  }
+
   .loginContainer {
     flex-direction: column;
   }
@@ -140,6 +158,26 @@
     max-width: 100%;
   }
 }
+
+@media (max-width:425px){
+  .loginOptions{
+    p,a{
+      font-size:12px;
+    }
+  }
+  .goto-vendor{
+    font-size:12px;
+  }
+}
+
+@media (max-width:330px){
+  .loginOptions{
+    .forget-password{
+      text-align:right;
+    }
+  }
+}
+
 @media (max-width: 1200px) {
   .loginFormWrapper h2 {
     font-size: 26px;

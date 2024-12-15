@@ -4,10 +4,10 @@
     
 }   
 .account-settings-heading{
-    font-size: 2rem;
+    font-size: 24px;
     font-weight: 600;
     margin-top: 72px;
-    margin-bottom: 48px;
+    margin-bottom: 32px;
     font-family: 'Poppins', sans-serif !important;
 }
 .account-settings-container{
@@ -41,10 +41,11 @@
     border: 1.5px solid rgba(3, 55, 211, 0.2);
 } */
 
-.account-settings-body-con{
+.account-settings-body-con,form{
     display: flex;
     flex-direction: column;
     gap: 24px;
+    
 }
 .login-info-data-grp{
     display: flex;
@@ -129,5 +130,33 @@
         cursor: pointer;
         text-align: right;
 
+    }
+
+    .having-error{
+        border: 1.6px solid red;
+    }
+    .password-error{
+        color: red;
+        text-align: left;
+        font-style: italic;
+    }
+}
+
+@media (max-width:500px) {
+    
+    .data-label,.data-value,.custom-btn-label,.regular-account-settings-btn{
+        font-size: 14px !important;
+    }
+    .data-value{
+        span{
+            font-size: 14px !important;
+        }
+        svg{
+            width: 18px;
+            height: 18px;
+        }
+    }
+    .custom-btn-con-forget-password span{
+        font-size: 13px ;
     }
 }

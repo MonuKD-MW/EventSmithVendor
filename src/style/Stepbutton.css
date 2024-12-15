@@ -5,7 +5,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-top: 8px;
+    margin-top: 12px;
     background-color: #fff;
     margin-bottom: 12px;
     button{
@@ -19,6 +19,7 @@
         }
     }
 }
+
 
 .signup-back-button {
         width: 49%;
@@ -84,3 +85,9 @@
             font-size: 14px;
         }
     }
+
+@media(min-width:998px){
+    .button-container{
+        margin-top:25px;
+    }
+}

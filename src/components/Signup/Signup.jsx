@@ -4,19 +4,19 @@ import SignupStep2 from './Signup-step2';
 import SignupStep1 from './Signup-step1';
 import useSignup from '../../utils/CustomHook/useSignup'; // Import the custom hook
 import StepButton from '../common/StepButton';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 function Signup() {
-// Use the hook here
-const 
-{
-  step,
-  setStep,
-  handleNext,
-  handleSubmit,
-  getStepClass,
-  errors,
-  handleValidation
-}=useSignup()
+  // Use the hook here
+  const
+    {
+      step,
+      setStep,
+      handleNext,
+      handleSubmit,
+      getStepClass,
+      errors,
+      handleValidation
+    } = useSignup()
 
   const stepNames = ['Personal Information', 'Verification'];
 
@@ -24,7 +24,7 @@ const
     <div className='signup-container'>
       {/* Step Titles and Pagination */}
       <div className='signup-title-container'>
-        <h4 className='signup-title-form'>{step===1 ? "Let's get started" : "Almost there!"}</h4>
+        <h4 className='signup-title-form'>{step === 1 ? "Let's get started" : "Almost there!"}</h4>
         <h3 className='signup-title-2'>Create your account</h3>
       </div>
 
@@ -41,39 +41,21 @@ const
 
       {/* Step 1 */}
       {step === 1 && (
-        <SignupStep1 handleValidation={handleValidation} errors={errors}/>
+        <SignupStep1 handleValidation={handleValidation} errors={errors} />
       )}
 
       {/* Step 2 */}
       {step === 2 && (
-        <SignupStep2/>
+        <SignupStep2 />
       )}
 
 
-<StepButton
-step={step}
-handleNext={handleNext}
-handleSubmit={handleSubmit}
-setStep={setStep}
-/>
-      
-{/* use to define the error popup tostify modal  */}
-      {/* Display errors if any
-{Object.keys(error).length > 0 && (
-  <div className="error-container">
-    {Object.entries(error).map(([key, value]) => {
-      console.log("Error key:", key); // The field name where the error occurred
-      console.log("Error value:", value); // The actual error message or object
-      console.log("Full error object:", error);
-
-      return (
-        <div key={key} className="error-message">
-          <strong>{key}:</strong> {value?.message || value}
-        </div>
-      );
-    })}
-  </div>
-)} */}
+      <StepButton
+        step={step}
+        handleNext={handleNext}
+        handleSubmit={handleSubmit}
+        setStep={setStep}
+      />
 
 
       <div className='signup-footer'>

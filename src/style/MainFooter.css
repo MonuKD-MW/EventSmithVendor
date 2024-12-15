@@ -156,15 +156,12 @@
   }
 
   @media (max-width: 796px) {
-    .main-footer .container{
-      padding: 40px;
-    }
     .main-footer .footer-logo-description {
       top: 0px;
     }
     .main-footer .footer-content {
       flex-direction: column;
-      padding: 10px;
+      padding: 20px;
     }
     .main-footer .footer-links-container {
       gap: 40px;
@@ -190,6 +187,9 @@
     .main-footer .footer-logo-description{
       align-items: center;
       text-align: center;
+    }
+    .footer-copyright{
+      padding-bottom:40px;
     }
 
   }

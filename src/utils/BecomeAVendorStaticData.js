@@ -141,15 +141,15 @@ export  const faqs = [
         name: "Personal Branding",
         type: "Starter Package",
         description:
-          "Ideal for vendors looking to establish their presence online without the complexity.",
+          "Ideal for vendors looking to establish their presence online without the extra cost of a website.",
         monthlyPrice: 60,
         sixMonthPrice: "45 (25% off)",
         features: {
           websiteProfile: true,
           seo: true,
           eventBookings: "Up to 5 per month.",
-          imageUploads: "Up to 30 images",
-          videoUploads: "-",
+          imageUploads: "Up to 50 images",
+          videoUploads: false,
           primaryEventType: true,
           serviceCategory: true,
           commitment: "No commitment, cancel any time",
@@ -164,7 +164,7 @@ export  const faqs = [
         name: "Insightful Growth",
         type: "Growth Package",
         description:
-          "Ideal for vendors looking to get access to powerful analytics and metrics that help them elevate their brand and tell their unique story",
+          "Ideal for vendors looking to get access to powerful analytics and media that help them elevate their brand and tell their unique story.",
         monthlyPrice: 150,
         sixMonthPrice: "100 (33% off)",
         features: {
@@ -187,14 +187,14 @@ export  const faqs = [
         name: "AI-Powered Branding",
         type: "Premium Package",
         description:
-          "Ideal for vendors who want to unlock the full potential of their brand with AI-powered insights and premium features",
+          "Ideal for vendors who want to unlock the full potential of their business with exclusive AI features.",
         monthlyPrice: 275,
-        sixMonthPrice: "175 (36% off)",
+        sixMonthPrice: "175 (40% off)",
         features: {
           websiteProfile: true,
           seo: true,
           eventBookings: true,
-          imageUploads: "Up to 750 images.",
+          imageUploads: "Up to 250 images.",
           videoUploads: "Up to 10 videos",
           primaryEventType: true,
           serviceCategory: true,

@@ -187,16 +187,62 @@
 }
 
 .upload-logo-con {
-  position: absolute;
-  top: 50%;
-  right: 30px;
-  transform: translate(0, -50%);
+  position: relative;
   width: 239px;
-  height: 198px;
+  min-height: 198px;
   padding: 16px;
   border-radius: 10px;
   background: rgba(3, 55, 211, 0.1);
+  margin-right: 20px;
+  overflow: hidden;
+  .image-wrapper{
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: inherit;
+    }
+  }
+  
 }
+.image-controls-div{
+  position:absolute;
+  top: 0;
+  left: 0;
+  z-index: 400;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 10px;
+  background-color: rgba(231, 231, 231, 0.52);
+  
+  .change-business-logo-label,.remove-img-btn{
+    background-color: #fff;
+    font-size: 14px;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor:pointer;
+    border:none;
+    outline: none;
+    transition: all 0.2s ease;
+  }:hover{
+    background-color: #e6e5e5;
+  }
+}
+
+.upload-logo-con-have-img{
+  padding: 0;
+  background:none;
+}
+
 
 .dashed-con {
   width: 207px;
@@ -207,9 +253,12 @@
   text-align: center;
 }
 
-.upload-logo-label {
+  label.upload-logo-label {
+  display: block;
   color: #3854F6;
   text-decoration: underline;
+  font-size: 10px;
+  font-weight: 500;
   cursor: pointer;
   margin-bottom: 10px;
 }
@@ -224,7 +273,27 @@
   font-size: 10px;
   font-weight: 400;
 }
+#business-body-con{
+  display: flex;
+  height: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
+  .flex-picked-column{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #flex-col-1,.flex-col-2{
+
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    align-items: start;
+  }
+}
 #my-profile-heading {
   font-size: 1.5rem;
   font-weight: 600;
@@ -263,16 +332,21 @@
   }
 }
 
+
+
 @media (max-width: 768px) {
-  
+  #business-body-con{
+    justify-content: start;
+    column-gap: 40px;
+  }
 
   .vendor-details {
     padding: 20px 16px;
   }
 
   .vendor-detail-outer-con {
-    flex-direction: column;
-    gap: 24px;
+    /* flex-direction: column; */
+    gap: 100px;
   }
 
   .left-img-name {
@@ -300,6 +374,7 @@
 
   .right-subscription-status .subscription-name {
     font-size: 16px !important;
+    margin-top: 8px;
   }
 
   .right-subscription-status .subscription-duration {
@@ -320,7 +395,7 @@
   }
 
   .body-con {
-    grid-template-columns: 1fr !important;
+    /* grid-template-columns: ; */
   }
 
   .data-grp .data-label {
@@ -337,10 +412,8 @@
     margin-bottom: 32px;
   }
   .business-info .body-con .upload-logo-con {
-    position: static;
-    transform: none;
-    width: 100%;
-    margin-top: 24px;
+    position: relative;
+    
   }
 
   .business-info .body-con .upload-logo-con .dashed-con {
@@ -349,14 +422,33 @@
 }
 
 
-
 /* Small Screen Adjustments */
 @media (max-width: 575px) {
+  .subscription-duration span {
+    margin-left: 0;
+  }
+  .right-subscription-status .subscription-name {
+    margin-top: 0;
+  }
   .business-info .body-con .upload-logo-con {
-    position: static;
-    transform: none;
-    width: 100%;
+
+    margin: 0 auto;
     margin-top: 24px;
+  }
+  .vendor-detail-outer-con{
+    flex-direction: column;
+    gap:24px;
+  }
+  .body-con{
+    grid-template-columns: 1fr;
+    row-gap: 25px;
+  }
+  #business-body-con{
+    flex-direction: column;
+    gap: 25px;
+    #flex-col-1,.flex-col-2{
+      gap: 25px;
+    }
   }
   #my-profile-heading{
     margin-top: 72px;
@@ -364,6 +456,7 @@
 
   .business-info .body-con .upload-logo-con .dashed-con {
     width: 100%;
+    
   }
 }
   

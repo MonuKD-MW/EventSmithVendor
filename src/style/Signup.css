@@ -6,6 +6,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 0 2rem;
+    
 }
 
 /* Title Styles */
@@ -454,7 +456,7 @@
       }
     }
     .vendor-login-container{
-      width: 530px;
+      width: 480px;
       margin-top: 5%;
       height: 56px;
       padding: 16px 24px 16px 24px;
@@ -489,6 +491,7 @@
   .signup-container {
     width: 90%;
     max-width: 925px;
+    padding: 0 10%;
 
   }
 
@@ -502,7 +505,7 @@
   .signup-container {
     width: 95%;
     gap: 13px;
-    padding: 0px 12px;
+
   }
 
   .signup-title-2 {
@@ -568,7 +571,7 @@
 /* Extra Small Screens (Mobile Phones) */
 @media screen and (max-width: 576px) {
   .signup-container {
-    padding: 1rem;
+    padding: 1rem 0;
     gap: 0.5rem;
   }
 
